@@ -3,6 +3,8 @@ import { motion } from 'framer-motion';
 import { PERSONAL_DATA } from '../../data/portfolioData';
 
 export const Hero3DGraphic: React.FC = () => {
+  const imageSrc = PERSONAL_DATA.profileImage || "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=800&auto=format&fit=crop";
+
   return (
     <div className="relative w-full max-w-[380px] sm:max-w-[440px] aspect-square mx-auto flex items-center justify-center">
       {/* Outer Glowing Matrix Green Rings */}
@@ -23,7 +25,7 @@ export const Hero3DGraphic: React.FC = () => {
         {/* Profile Image Frame with Matrix Green Glow */}
         <div className="relative w-44 h-44 sm:w-52 sm:h-52 rounded-full p-1.5 bg-gradient-to-tr from-emerald-400 via-green-400 to-emerald-600 shadow-[0_0_25px_rgba(0,255,102,0.5)]">
           <img
-            src={PERSONAL_DATA.profileImage}
+            src={imageSrc}
             alt={PERSONAL_DATA.fullName}
             className="w-full h-full object-cover rounded-full border-2 border-black shadow-inner"
           />

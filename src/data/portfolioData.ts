@@ -15,7 +15,7 @@ export const PERSONAL_DATA = {
   email: "chakkaphat.luna@gmail.com",
   address: "5/4 Mukdahan Patchasumpat Rd.",
   dateOfBirth: "01 May 2005",
-  profileImage: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=800&auto=format&fit=crop",
+  profileImage: "",
 };
 
 export const EDUCATION_DATA: TimelineItem[] = [
@@ -70,7 +70,7 @@ export const EXPERIENCE_DATA: TimelineItem[] = [
 export const PROJECTS_DATA: Project[] = [
   {
     id: 'proj-1',
-    title: 'เว็ปไซต์สัมภาษณ์ด้วย AI (AI Interview)',
+    title: 'เว็ปไซต์ฝึกสัมภาษณ์งานด้วย AI (AI Interview Simulator)',
     category: 'Academic',
     role: 'Full-Stack Developer',
     responsibility: [
@@ -132,56 +132,56 @@ export const CERTIFICATES_DATA: Certificate[] = [
   },
   {
     id: 'cert-4',
-    title: 'Hackfinity Cyber Security Competition',
-    issuer: 'Hackfinity / Tech Security Network',
+    title: 'Hackfinity Battle ',
+    issuer: 'HackTheBox',
     issueDate: '2024',
     thumbnail: '/certificates/hackfinity.png',
     tags: ['Hackfinity', 'Ethical Hacking', 'Security']
   },
   {
     id: 'cert-5',
-    title: 'MTYCGT 2025 Youth Cybersecurity Training',
-    issuer: 'Ministry of Digital Economy and Society',
+    title: 'Meet The Youth Cyber Guardians Thailand 2025',
+    issuer: 'Royal Thai Armed Forces Cyber Command',
     issueDate: '2025',
     thumbnail: '/certificates/MTYCGT2025.png',
     tags: ['Cyber Training', 'Youth Tech', 'MTYCGT']
   },
   {
     id: 'cert-6',
-    title: 'NCSA Cybersecurity Intensive Course (28 Hours)',
-    issuer: 'National Cyber Security Agency (NCSA)',
+    title: 'NCSA e-Learning Penetration Test (28 Hours)',
+    issuer: 'NCSA / สำนักงานคณะกรรมการการรักษาความมั่นคงปลอดภัยไซเบอร์แห่งชาติ',
     issueDate: '2024',
     thumbnail: '/certificates/NCSA 28 hr.png',
     tags: ['NCSA 28Hr', 'Cyber Training', 'Certificate']
   },
   {
     id: 'cert-7',
-    title: 'NCSA Cyber Skill Certificate (21 Hours)',
-    issuer: 'National Cyber Security Agency (NCSA)',
+    title: 'NCSA e-Learning Cybersecurity Foundation Course (21 Hours)',
+    issuer: 'NCSA / สำนักงานคณะกรรมการการรักษาความมั่นคงปลอดภัยไซเบอร์แห่งชาติ',
     issueDate: '2024',
     thumbnail: '/certificates/NCSA 21 hr.jpg',
     tags: ['NCSA 21Hr', 'Security Certificate']
   },
   {
     id: 'cert-8',
-    title: 'NCSA Practical Cyber Defense (20 Hours)',
-    issuer: 'National Cyber Security Agency (NCSA)',
+    title: 'NCSA e-Learning Professional Course (20 Hours)',
+    issuer: 'NCSA / สำนักงานคณะกรรมการการรักษาความมั่นคงปลอดภัยไซเบอร์แห่งชาติ',
     issueDate: '2024',
     thumbnail: '/certificates/NCSA 20 hr.png',
     tags: ['NCSA 20Hr', 'Cyber Defense']
   },
   {
     id: 'cert-9',
-    title: 'Senior Cyber Top Talent Recognition',
-    issuer: 'NCSA Tech Talent Program',
-    issueDate: '2024',
+    title: 'AI MINI HACKATON 2026',
+    issuer: 'Bangkok University',
+    issueDate: '2026',
     thumbnail: '/certificates/7.jpg',
     tags: ['Senior Top Talent', 'Cyber Security']
   },
   {
     id: 'cert-10',
-    title: 'Cyber Security Achievement Certificate',
-    issuer: 'Tech Competition Committee',
+    title: 'BU-ITI CTF COMPETITION 2025',
+    issuer: 'Bangkok University',
     issueDate: '2024',
     thumbnail: '/certificates/22.png',
     tags: ['Achievement', 'Tech Talent']
