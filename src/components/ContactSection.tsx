@@ -27,9 +27,9 @@ export const ContactSection: React.FC = () => {
               Get In Touch
             </h2>
 
-            <p className="text-sm sm:text-base text-slate-300 font-light leading-relaxed">
-              พร้อมสำหรับการติดต่องานหรือร่วมงานในโครงการซอฟต์แวร์และเว็บแอปพลิเคชัน
-            </p>
+            {/* <p className="text-sm sm:text-base text-slate-300 font-light leading-relaxed">
+              Available for professional inquiries, software engineering, and web development projects.
+            </p> */}
           </div>
         </FadeIn>
 

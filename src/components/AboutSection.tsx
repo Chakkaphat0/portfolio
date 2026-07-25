@@ -18,9 +18,9 @@ export const AboutSection: React.FC = () => {
             <h2 className="hero-heading-green font-black uppercase tracking-tight text-4xl sm:text-5xl md:text-6xl">
               About me
             </h2>
-            <p className="mt-2 text-xs font-mono font-bold uppercase tracking-widest text-emerald-400">
-              
-            </p>
+            {/* <p className="mt-2 text-xs font-mono font-bold uppercase tracking-widest text-emerald-400">
+              Educational Background (Secondary & Higher Education)
+            </p> */}
           </div>
         </FadeIn>
 
@@ -28,8 +28,8 @@ export const AboutSection: React.FC = () => {
         <FadeIn delay={0.15}>
           <div className="max-w-3xl mx-auto mb-20 px-6 py-8 rounded-3xl glass-card-matrix border border-emerald-500/30 shadow-[0_0_30px_rgba(0,255,102,0.1)]">
             <AnimatedText
-              text="I love bigc"
-              className="text-base sm:text-lg md:text-xl font-normal text-slate-200 text-center leading-relaxed"
+              text="We love we live we life ."
+              className="text-base sm:text-lg md:text-xl font-medium text-slate-200 text-center leading-relaxed tracking-wide"
             />
           </div>
         </FadeIn>
@@ -92,7 +92,7 @@ export const AboutSection: React.FC = () => {
                     </ul>
                   )}
 
-                  <div className="flex flex-wrap gap-2 pt-2">
+                  {/* <div className="flex flex-wrap gap-2 pt-2">
                     {edu.tags?.map((tag) => (
                       <span
                         key={tag}
@@ -101,7 +101,7 @@ export const AboutSection: React.FC = () => {
                         #{tag}
                       </span>
                     ))}
-                  </div>
+                  </div> */}
                 </div>
               </FadeIn>
             ))}

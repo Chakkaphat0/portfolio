@@ -21,10 +21,10 @@ export const PERSONAL_DATA = {
 export const EDUCATION_DATA: TimelineItem[] = [
   {
     id: 'edu-1',
-    period: '2023 - ปัจจุบัน',
-    title: 'ระดับอุดมศึกษา: ปริญญาตรี (เทคโนโลยีสารสนเทศ)',
+    period: '2023 - Present',
+    title: 'Bachelor of Science (Computer Science - Data Science and Cybersecurity)',
     subtitle: 'Bangkok University',
-    organization: 'มหาวิทยาลัยกรุงเทพ (Bangkok University)',
+    organization: 'Bangkok University',
     description: '',
     bullets: [],
     tags: ['Bangkok University', 'IT']
@@ -33,8 +33,8 @@ export const EDUCATION_DATA: TimelineItem[] = [
     id: 'edu-2',
     period: '2017 - 2023',
     title: 'MUKDAHAN SCHOOL',
-    subtitle: '',
-    organization: 'ระดับมัธยมศึกษา: มัธยมศึกษาตอนต้น - ปลาย',
+    subtitle: 'High School',
+    organization: 'Junior & Senior High School (Science-Math Program)',
     description: '',  
     bullets: [],
     tags: ['MUKDAHAN SCHOOL']
@@ -42,9 +42,9 @@ export const EDUCATION_DATA: TimelineItem[] = [
   {
     id: 'edu-3',
     period: '2011 - 2017',
-    title: 'Elementary SaintJosephMukdahan School',
-    subtitle: '',
-    organization: 'ระดับประถมศึกษา: ประถมศึกษา',
+    title: 'Elementary Saint Joseph Mukdahan School',
+    subtitle: 'Elementary',
+    organization: 'Elementary School',
     description: '',  
     bullets: [],
     tags: ['SaintJosephMukdahan']
@@ -58,10 +58,10 @@ export const EXPERIENCE_DATA: TimelineItem[] = [
     title: 'Full-Stack & Web Developer',
     subtitle: 'Academic & Projects',
     organization: 'Bangkok University',
-    description: 'พัฒนาเว็บแอปพลิเคชันสำหรับรายวิชาและโครงการนวัตกรรม',
+    description: 'Developing web applications for academic courses and digital innovation projects.',
     bullets: [
-      'พัฒนาเว็บแอปพลิเคชันด้วย React & Node.js',
-      'ออกแบบ UI/UX ที่เรียบง่าย มินิมอล สบายตา'
+      'Built modern web applications with React & Node.js',
+      'Designed clean, responsive, and minimalist UI/UX'
     ],
     tags: ['React', 'TypeScript', 'Node.js', 'Tailwind CSS']
   }
@@ -70,15 +70,15 @@ export const EXPERIENCE_DATA: TimelineItem[] = [
 export const PROJECTS_DATA: Project[] = [
   {
     id: 'proj-1',
-    title: 'เว็ปไซต์ฝึกสัมภาษณ์งานด้วย AI (AI Interview Simulator)',
+    title: 'AI Interview Simulator Web Application',
     category: 'Academic',
     role: 'Full-Stack Developer',
     responsibility: [
-      'ออกแบบระบบ Frontend & Backend',
-      'พัฒนาการเชื่อมต่อ AI / Voice API และประมวลผลการตอบคำถามสัมภาษณ์แบบเรียลไทม์'
+      'Designed Frontend & Backend Architecture',
+      'Integrated AI / Voice API for real-time interview evaluation'
     ],
     techStack: ['React', 'TypeScript', 'Node.js'],
-    description: 'เว็บแอปพลิเคชันจำลองการสัมภาษณ์งานด้วยระบบปัญญาประดิษฐ์ พัฒนาขึ้นเพื่อช่วยผู้หางานและนักศึกษาฝึกซ้อมตอบคำถามสัมภาษณ์แบบเรียลไทม์ พร้อมรับข้อเสนอแนะเพื่อนำไปปรับปรุง ตัวระบบประมวลผลคำถามและคำตอบผ่าน Botnoi Voice / NLP API เพื่อจำลองบรรยากาศการสัมภาษณ์ที่สมจริง',
+    description: 'An AI-powered job interview simulation web application designed to help job seekers and students practice interview questions in real-time. The system processes speech and text responses via Botnoi Voice & NLP APIs to simulate realistic interview scenarios with instant feedback.',
     coverImage: '/AI interview pic.png',
     images: [
       '/AI interview pic1.png',
@@ -99,7 +99,7 @@ export const ACTIVITIES_DATA: Activity[] = [
     date: '2024',
     role: 'Web Developer',
     organization: 'Bangkok University',
-    description: 'เข้าร่วมการแข่งขันพัฒนาซอฟต์แวร์และนำเสนอไอเดียนวัตกรรมดิจิทัล',
+    description: 'Participated in software development hackathon and presented digital innovation solutions.',
     image: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=800&auto=format&fit=crop',
     achievement: '🏆 Participant & Innovation Finalist'
   }
@@ -109,58 +109,50 @@ export const CERTIFICATES_DATA: Certificate[] = [
   {
     id: 'cert-1',
     title: 'Thailand Cyber Top Talent 2025 (TCTT 2025)',
-    issuer: 'NCSA / สำนักงานคณะกรรมการการรักษาความมั่นคงปลอดภัยไซเบอร์แห่งชาติ',
+    issuer: 'National Cyber Security Agency (NCSA)',
     issueDate: '2025',
     year: '2025',
     category: 'Competition',
-    teamName: 'Tactical Sword',
-    rank: 'ระดับประชาชน (Senior Category)',
-    scoreUrl: 'https://cloud.ctf.in.th/score/?status=finished',
+    scoreUrl: 'https://cloud.ctf.in.th/score/view.html?t=BQU14LUPQ1',
     thumbnail: '/certificates/tctt2025.png',
     tags: ['Cybersecurity', 'CTF', 'Web Hacking', 'Reverse Engineering'],
-    description: 'การแข่งขัน Capture The Flag (CTF) ระดับประเทศที่ใหญ่ที่สุด จัดโดย สกมช. (NCSA) ร่วมกับ Huawei ทดสอบทักษะการแก้โจทย์ไซเบอร์ เช่น Web Security, Cryptography, Reverse Engineering, Forensics และ Network Security ภายใต้ชื่อทีม Tactical Sword ในระดับ Senior'
+    description: "Thailand's largest national Capture The Flag (CTF) cybersecurity competition organized by NCSA and Huawei. Tested advanced security skills including Web Exploitation, Cryptography, Reverse Engineering, Digital Forensics, and Network Security."
   },
   {
     id: 'cert-2',
     title: 'Thailand Cyber Top Talent 2024 (TCTT 2024)',
-    issuer: 'NCSA / สำนักงานคณะกรรมการการรักษาความมั่นคงปลอดภัยไซเบอร์แห่งชาติ',
+    issuer: 'National Cyber Security Agency (NCSA)',
     issueDate: '2024',
     year: '2024',
     category: 'Competition',
-    teamName: 'Tactical Sword',
-    rank: 'ระดับประชาชน (Senior Category)',
-    scoreUrl: 'https://cloud.ctf.in.th/score/?status=finished',
+    scoreUrl: 'https://cloud.ctf.in.th/score/view.html?t=QR66WITOOJ',
     thumbnail: '/certificates/tctt2024.png',
     tags: ['Cybersecurity', 'TCTT 2024', 'Competition'],
-    description: 'การแข่งขันคัดเลือกตัวแทนสุดยอดอัจฉริยะไซเบอร์ระดับประเทศ (Senior Level) ฝึกแก้ไขโจทย์ท้าทายความปลอดภัยระบบดิจิทัลและการป้องกันการโจมตีทางไซเบอร์ในสถานการณ์จำลองแบบ Jeopardy CTF ภายใต้ทีม Tactical Sword'
+    description: "Thailand's largest national Capture The Flag (CTF) cybersecurity competition organized by NCSA and Huawei. Tested advanced security skills including Web Exploitation, Cryptography, Reverse Engineering, Digital Forensics, and Network Security."
   },
   {
     id: 'cert-3',
     title: 'Thailand Cyber Top Talent 2023 (TCTT 2023)',
-    issuer: 'NCSA / สำนักงานคณะกรรมการการรักษาความมั่นคงปลอดภัยไซเบอร์แห่งชาติ',
+    issuer: 'National Cyber Security Agency (NCSA)',
     issueDate: '2023',
     year: '2023',
     category: 'Competition',
-    teamName: 'Tactical Sword',
-    rank: 'ระดับประชาชน (Senior Category)',
-    scoreUrl: 'https://cloud.ctf.in.th/score/?status=finished',
+    scoreUrl: 'https://cloud.ctf.in.th/score/view.html?t=2HFLHQZCMI',
     thumbnail: '/certificates/tctt 2023.png',
     tags: ['Cybersecurity', 'TCTT 2023'],
-    description: 'การแข่งขัน Capture The Flag เพื่อพัฒนาศักยภาพบุคลากรความมั่นคงปลอดภัยไซเบอร์ของประเทศไทย ครอบคลุมการวิเคราะห์ Malware, Digital Forensics, Exploitation และ Cryptography ภายใต้ทีม Tactical Sword'
+    description: "Thailand's largest national Capture The Flag (CTF) cybersecurity competition organized by NCSA and Huawei. Tested advanced security skills including Web Exploitation, Cryptography, Reverse Engineering, Digital Forensics, and Network Security."
   },
   {
     id: 'cert-4',
     title: 'Hackfinity Battle',
-    issuer: 'HackTheBox',
+    issuer: 'TryHackMe',
     issueDate: '2024',
     year: '2024',
     category: 'Competition',
-    teamName: 'Tactical Sword',
-    rank: 'Cyber Security Challenger',
-    scoreUrl: 'https://cloud.ctf.in.th/score/?status=finished',
+    scoreUrl: 'https://tryhackme.com/hackfinity',
     thumbnail: '/certificates/hackfinity.png',
     tags: ['Hackfinity', 'Ethical Hacking', 'Security'],
-    description: 'การแข่งขันจำลองการเจาะระบบและทดสอบความแข็งแกร่งทางไซเบอร์ (Ethical Hacking & Penetration Testing) โดยผู้แข่งต้องหาช่องโหว่ของเซิร์ฟเวอร์ระบบปฏิบัติการ Linux และ Windows เพื่อยึดสิทธิ์ Root/Administrator'
+    description: 'A jeopardy-style Capture The Flag (CTF) competition hosted by TryHackMe, challenging participants across web exploitation, digital forensics, cryptography, reverse engineering, and blockchain security with hands-on real-world vulnerability scenarios.'
   },
   {
     id: 'cert-5',
@@ -169,59 +161,58 @@ export const CERTIFICATES_DATA: Certificate[] = [
     issueDate: '2025',
     year: '2025',
     category: 'Workshop',
-    rank: 'Youth Cyber Guardian',
+    scoreUrl: 'https://ctf.in.th/news/3953/',
     thumbnail: '/certificates/MTYCGT2025.png',
     tags: ['Cyber Training', 'Youth Tech', 'MTYCGT'],
-    description: 'โครงการอบรมเชิงปฏิบัติการยกระดับเยาวชนผู้เชี่ยวชาญด้านความมั่นคงปลอดภัยไซเบอร์ (MTYCGT 2025) เน้นความรู้ด้าน Incident Response, Threat Intelligence, SOC Analysis และกฎหมายความมั่นคงไซเบอร์'
+    description: 'A national cybersecurity training program organized by the Royal Thai Armed Forces Cyber Command in collaboration with NCSA, bringing together young cyber talents for intensive hands-on workshops covering Incident Response, Threat Intelligence, SOC Analysis, and Cyber Law.'
   },
   {
     id: 'cert-6',
     title: 'NCSA e-Learning Penetration Test (28 Hours)',
-    issuer: 'NCSA / สำนักงานคณะกรรมการการรักษาความมั่นคงปลอดภัยไซเบอร์แห่งชาติ',
+    issuer: 'National Cyber Security Agency (NCSA)',
     issueDate: '2024',
     year: '2024',
     category: 'Course',
-    rank: 'Pass (28 Hours Intensive Training)',
+    scoreUrl: 'https://www.thnca.or.th/our-services/ncsa-e-learning/penetration-test-online/',
     thumbnail: '/certificates/NCSA 28 hr.png',
     tags: ['NCSA 28Hr', 'Cyber Training', 'Certificate'],
-    description: 'หลักสูตรอบรมเข้มข้น 28 ชั่วโมง ด้านการทดสอบเจาะระบบ (Penetration Testing) และการประเมินช่องโหว่ (Vulnerability Assessment) ครอบคลุม OWASP Top 10, Web Exploit, Privilege Escalation และการเขียนรายงานความเสี่ยง'
+    description: 'An intensive 28-hour specialized course from the Thailand National Cyber Academy (THNCA) covering Penetration Testing methodologies, OWASP Top 10 vulnerability assessment, web exploitation techniques, privilege escalation, and professional security reporting.'
   },
   {
     id: 'cert-7',
     title: 'NCSA e-Learning Cybersecurity Foundation Course (21 Hours)',
-    issuer: 'NCSA / สำนักงานคณะกรรมการการรักษาความมั่นคงปลอดภัยไซเบอร์แห่งชาติ',
+    issuer: 'National Cyber Security Agency (NCSA)',
     issueDate: '2024',
     year: '2024',
     category: 'Course',
-    rank: 'Pass (21 Hours Certificate)',
+    scoreUrl: 'https://www.thnca.or.th/our-services/ncsa-e-learning/',
     thumbnail: '/certificates/NCSA 21 hr.jpg',
     tags: ['NCSA 21Hr', 'Security Certificate'],
-    description: 'หลักสูตรปูพื้นฐานความมั่นคงปลอดภัยไซเบอร์ระดับชาติ 21 ชั่วโมง เรียนรู้โครงสร้างสถาปัตยกรรมความปลอดภัยเครือข่าย Cryptography, Access Control และมาตรฐาน ISO/IEC 27001'
+    description: 'A 21-hour foundational cybersecurity course from the Thailand National Cyber Academy (THNCA) covering information security principles (CIA Triad), network security architecture, cryptography fundamentals, access control, and ISO/IEC 27001 security standards.'
   },
   {
     id: 'cert-8',
     title: 'NCSA e-Learning Professional Course (20 Hours)',
-    issuer: 'NCSA / สำนักงานคณะกรรมการการรักษาความมั่นคงปลอดภัยไซเบอร์แห่งชาติ',
+    issuer: 'National Cyber Security Agency (NCSA)',
     issueDate: '2024',
     year: '2024',
     category: 'Course',
-    rank: 'Pass (20 Hours Certificate)',
+    scoreUrl: 'https://www.thnca.or.th/our-services/ncsa-e-learning/advanced-online-2/',
     thumbnail: '/certificates/NCSA 20 hr.png',
     tags: ['NCSA 20Hr', 'Cyber Defense'],
-    description: 'หลักสูตรการตั้งค่าระบบและรับมือภัยคุกคามไซเบอร์เชิงปฏิบัติการ 20 ชั่วโมง มุ่งเน้นการกำหนดนโยบายความปลอดภัย Hardening OS/Server การใช้วิธีป้องกัน Ransomware และการกำกับดูแลกฎหมาย PDPA/NCSA Act'
+    description: 'A 20-hour professional-level course from the Thailand National Cyber Academy (THNCA) aligned with CompTIA Security+ standards, covering server hardening, ransomware defense strategies, cybersecurity governance, security policy enforcement, and PDPA compliance.'
   },
   {
     id: 'cert-9',
-    title: 'AI MINI HACKATON 2026',
+    title: 'AI MINI HACKATHON 2026',
     issuer: 'Bangkok University',
     issueDate: '2026',
     year: '2026',
     category: 'Competition',
-    teamName: 'Bangkok University Team',
-    rank: 'AI Innovation Hackathon Finalist',
+    scoreUrl: 'https://www.bu.ac.th/en/featured-stories/2468',
     thumbnail: '/certificates/7.jpg',
-    tags: ['Senior Top Talent', 'Cyber Security'],
-    description: 'การแข่งขันแฮกกาธอนประยุกต์ใช้ปัญญาประดิษฐ์และนวัตกรรมดิจิทัล (AI Mini Hackathon 2026) เพื่อแก้โจทย์ธุรกิจและปัญหาสังคมจริงด้วยโมเดล AI และเทคโนโลยี Web Full-Stack'
+    tags: ['AI Hackathon', 'Innovation'],
+    description: 'An AI Mini Hackathon organized by the School of Information Technology and Innovation at Bangkok University, in which students competed in small groups to develop real-world solutions using AI technology, with evaluation and awards presented by a judging panel.'
   },
   {
     id: 'cert-10',
@@ -230,11 +221,10 @@ export const CERTIFICATES_DATA: Certificate[] = [
     issueDate: '2025',
     year: '2025',
     category: 'Competition',
-    teamName: 'Tactical Sword',
-    rank: 'CTF Winner / Top Competitor',
+    scoreUrl: 'https://www.bu.ac.th/en/featured-stories/1848',
     thumbnail: '/certificates/22.png',
-    tags: ['Achievement', 'Tech Talent'],
-    description: 'การแข่งขันประลองทักษะด้านไซเบอร์และการเจาะระบบภายในมหาวิทยาลัยกรุงเทพ (BU-ITI CTF 2025) ทดสอบความเชี่ยวชาญการถอดรหัส แกะรอยดิจิทัลฟอเรนสิกส์ และการค้นหาช่องโหว่ Flag'
+    tags: ['BU CTF', 'Cybersecurity'],
+    description: 'An inaugural Capture The Flag cybersecurity competition hosted by the School of Information Technology and Innovation (BU-ITI) at Bangkok University in collaboration with G-Able (CyberGenics) and NCSA, featuring 20 student teams competing in penetration testing, cryptography, and digital forensics challenges.'
   }
 ];
 

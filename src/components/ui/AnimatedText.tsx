@@ -16,11 +16,11 @@ export const AnimatedText: React.FC<AnimatedTextProps> = ({ text, className = ''
   const words = text.split(' ');
 
   return (
-    <p ref={targetRef} className={`flex flex-wrap justify-center ${className}`}>
+    <p ref={targetRef} className={`flex flex-wrap justify-center leading-relaxed tracking-wide ${className}`}>
       {words.map((word, wordIndex) => {
         const characters = word.split('');
         return (
-          <span key={wordIndex} className="inline-block whitespace-nowrap mr-[0.3em] mb-[0.1em]">
+          <span key={wordIndex} className="inline-block whitespace-nowrap mr-[0.4em] mb-[0.25em]">
             {characters.map((char, charIndex) => {
               const globalIndex = words.slice(0, wordIndex).reduce((acc, w) => acc + w.length, 0) + charIndex;
               const totalLength = text.length;
@@ -54,11 +54,11 @@ const Character: React.FC<CharacterProps> = ({ char, range, progress }) => {
   const y = useTransform(progress, range, [4, 0]);
 
   return (
-    <span className="relative inline-block">
-      <span className="opacity-20 text-slate-700">{char}</span>
+    <span className="relative inline-block px-[0.5px]">
+      <span className="opacity-25 text-slate-600 select-none font-sans font-medium">{char}</span>
       <motion.span
         style={{ opacity, y }}
-        className="absolute left-0 top-0 text-emerald-400 font-medium font-mono drop-shadow-[0_0_8px_rgba(0,255,102,0.4)]"
+        className="absolute left-0 top-0 text-emerald-400 font-semibold font-sans drop-shadow-[0_0_8px_rgba(0,255,102,0.4)]"
       >
         {char}
       </motion.span>

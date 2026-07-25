@@ -18,9 +18,9 @@ export const ProjectsSection: React.FC = () => {
             <h2 className="hero-heading-green font-black uppercase tracking-tight text-4xl sm:text-5xl md:text-6xl">
               Projects
             </h2>
-            <p className="mt-2 text-xs font-mono font-bold uppercase tracking-widest text-emerald-400">
-              ผลงานการพัฒนาระบบ 3D Web Application & Full-Stack Projects
-            </p>
+            {/* <p className="mt-2 text-xs font-mono font-bold uppercase tracking-widest text-emerald-400">
+              3D Web Application & Full-Stack Projects
+            </p> */}
           </div>
         </FadeIn>
 
@@ -72,15 +72,15 @@ export const ProjectsSection: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Project Details Grid (Description moved up close to the title) */}
+                {/* Project Details Grid */}
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                   
                   {/* Left Details (5 cols) */}
                   <div className="lg:col-span-5 space-y-5">
-                    {/* Description - Positioned right below header */}
+                    {/* Description */}
                     <div className="space-y-1.5">
                       <h4 className="text-xs font-mono font-bold uppercase tracking-widest text-emerald-400">
-                        คำอธิบายโครงการ (Description)
+                        Project Description
                       </h4>
                       <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-normal">
                         {project.description}

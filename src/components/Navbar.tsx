@@ -51,7 +51,7 @@ export const Navbar: React.FC = () => {
               C
             </div>
             <span className="text-sm font-semibold tracking-wide text-white uppercase">
-              Chakkaphat <span className="text-emerald-400 font-mono font-normal">/ MATRIX</span>
+              Chakkaphat <span className="text-emerald-400 font-mono font-normal"></span>
             </span>
           </a>
 

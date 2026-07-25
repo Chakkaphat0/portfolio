@@ -63,6 +63,7 @@ export interface Certificate {
   tags: string[];
   description?: string;
   teamName?: string;
+  username?: string;
   category?: 'Competition' | 'Course' | 'Workshop' | 'Achievement';
   rank?: string;
   scoreUrl?: string;
