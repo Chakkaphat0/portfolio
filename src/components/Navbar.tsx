@@ -36,7 +36,7 @@ export const Navbar: React.FC = () => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-white/90 backdrop-blur-md py-3.5 shadow-xs border-b border-sky-100'
+          ? 'glass-nav-matrix py-3.5 shadow-md border-b border-emerald-900/40'
           : 'bg-transparent py-5'
       }`}
     >
@@ -45,34 +45,34 @@ export const Navbar: React.FC = () => {
           {/* Logo / Personal Name Badge */}
           <a
             href="#home"
-            className="flex items-center gap-2.5 text-slate-900 font-extrabold tracking-tight text-lg hover:opacity-85 transition-opacity focus:outline-none"
+            className="flex items-center gap-2.5 text-white font-extrabold tracking-tight text-lg hover:opacity-85 transition-opacity focus:outline-none"
           >
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-sky-700 via-sky-600 to-cyan-500 text-white flex items-center justify-center font-bold text-sm shadow-xs">
+            <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-emerald-400 to-green-500 text-black flex items-center justify-center font-black text-sm shadow-[0_0_15px_rgba(0,255,102,0.4)]">
               C
             </div>
-            <span className="text-sm font-semibold tracking-wide text-slate-800 uppercase">
-              Chakkaphat <span className="text-sky-600 font-normal">/ BU</span>
+            <span className="text-sm font-semibold tracking-wide text-white uppercase">
+              Chakkaphat <span className="text-emerald-400 font-mono font-normal">/ MATRIX</span>
             </span>
           </a>
 
-          {/* Desktop Nav Links (Sky Blue active tab) */}
-          <nav className="hidden md:flex items-center gap-1 bg-sky-50/70 p-1 rounded-full border border-sky-200/60">
+          {/* Desktop Nav Links (Pure Black & Matrix Green) */}
+          <nav className="hidden md:flex items-center gap-1 bg-black/90 p-1 rounded-full border border-emerald-500/30">
             {NAV_ITEMS.map((item) => {
               const isActive = activeSection === item.href.substring(1);
               return (
                 <a
                   key={item.href}
                   href={item.href}
-                  className={`relative px-4 py-1.5 rounded-full text-xs font-medium tracking-wide transition-colors duration-200 ${
+                  className={`relative px-4 py-1.5 rounded-full text-xs font-mono font-semibold tracking-wide transition-colors duration-200 ${
                     isActive
-                      ? 'text-sky-950 font-bold'
-                      : 'text-slate-600 hover:text-sky-800'
+                      ? 'text-emerald-300 font-bold'
+                      : 'text-slate-400 hover:text-emerald-400'
                   }`}
                 >
                   {isActive && (
                     <motion.div
                       layoutId="navTab"
-                      className="absolute inset-0 bg-white rounded-full shadow-xs border border-sky-200/60"
+                      className="absolute inset-0 bg-emerald-950/80 rounded-full border border-emerald-500/60 shadow-[0_0_15px_rgba(0,255,102,0.25)]"
                       transition={{ type: 'spring', stiffness: 400, damping: 30 }}
                     />
                   )}
@@ -86,7 +86,7 @@ export const Navbar: React.FC = () => {
           <div className="hidden md:flex items-center">
             <a
               href="#contact"
-              className="px-4 py-2 rounded-full border border-sky-400 bg-sky-500 text-white text-xs font-semibold hover:bg-sky-600 transition-all duration-200 shadow-xs"
+              className="px-4 py-2 rounded-full border border-emerald-400 bg-emerald-500 text-black text-xs font-mono font-bold hover:bg-emerald-400 transition-all duration-200 shadow-[0_0_15px_rgba(0,255,102,0.3)]"
             >
               Contact
             </a>
@@ -96,7 +96,7 @@ export const Navbar: React.FC = () => {
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 rounded-lg bg-sky-50 text-sky-900 border border-sky-200 hover:bg-sky-100 focus:outline-none"
+              className="p-2 rounded-lg bg-black text-emerald-400 border border-emerald-500/40 hover:bg-slate-900 focus:outline-none"
               aria-label="Toggle Navigation Menu"
             >
               {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -112,7 +112,7 @@ export const Navbar: React.FC = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white/95 backdrop-blur-md border-b border-sky-100 overflow-hidden"
+            className="md:hidden bg-black/95 backdrop-blur-md border-b border-emerald-900/50 overflow-hidden"
           >
             <div className="px-6 py-6 space-y-2">
               {NAV_ITEMS.map((item) => (
@@ -120,16 +120,16 @@ export const Navbar: React.FC = () => {
                   key={item.href}
                   href={item.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="block px-4 py-2 rounded-lg text-sm font-medium text-slate-700 hover:bg-sky-50 hover:text-sky-900 transition-colors"
+                  className="block px-4 py-2 rounded-lg text-sm font-mono font-medium text-slate-300 hover:bg-emerald-950/50 hover:text-emerald-400 transition-colors"
                 >
                   {item.label}
                 </a>
               ))}
-              <div className="pt-4 border-t border-sky-100">
+              <div className="pt-4 border-t border-slate-900">
                 <a
                   href="#contact"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="block w-full py-2.5 text-center rounded-lg bg-sky-600 text-white text-xs font-semibold"
+                  className="block w-full py-2.5 text-center rounded-lg bg-emerald-500 text-black text-xs font-mono font-bold"
                 >
                   Contact Me
                 </a>

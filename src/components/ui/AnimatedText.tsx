@@ -50,15 +50,15 @@ interface CharacterProps {
 }
 
 const Character: React.FC<CharacterProps> = ({ char, range, progress }) => {
-  const opacity = useTransform(progress, range, [0.25, 1]);
+  const opacity = useTransform(progress, range, [0.2, 1]);
   const y = useTransform(progress, range, [4, 0]);
 
   return (
     <span className="relative inline-block">
-      <span className="opacity-20 text-slate-400">{char}</span>
+      <span className="opacity-20 text-slate-700">{char}</span>
       <motion.span
         style={{ opacity, y }}
-        className="absolute left-0 top-0 text-slate-900 font-medium"
+        className="absolute left-0 top-0 text-emerald-400 font-medium font-mono drop-shadow-[0_0_8px_rgba(0,255,102,0.4)]"
       >
         {char}
       </motion.span>
