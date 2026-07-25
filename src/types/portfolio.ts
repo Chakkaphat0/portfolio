@@ -57,7 +57,13 @@ export interface Certificate {
   title: string;
   issuer: string;
   issueDate: string;
+  year: '2026' | '2025' | '2024' | '2023';
   credentialUrl?: string;
   thumbnail: string;
   tags: string[];
+  description?: string;
+  teamName?: string;
+  category?: 'Competition' | 'Course' | 'Workshop' | 'Achievement';
+  rank?: string;
+  scoreUrl?: string;
 }

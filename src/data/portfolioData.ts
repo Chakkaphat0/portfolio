@@ -111,80 +111,130 @@ export const CERTIFICATES_DATA: Certificate[] = [
     title: 'Thailand Cyber Top Talent 2025 (TCTT 2025)',
     issuer: 'NCSA / สำนักงานคณะกรรมการการรักษาความมั่นคงปลอดภัยไซเบอร์แห่งชาติ',
     issueDate: '2025',
+    year: '2025',
+    category: 'Competition',
+    teamName: 'Tactical Sword',
+    rank: 'ระดับประชาชน (Senior Category)',
+    scoreUrl: 'https://cloud.ctf.in.th/score/?status=finished',
     thumbnail: '/certificates/tctt2025.png',
-    tags: ['Cybersecurity', 'CTF', 'TCTT 2025']
+    tags: ['Cybersecurity', 'CTF', 'Web Hacking', 'Reverse Engineering'],
+    description: 'การแข่งขัน Capture The Flag (CTF) ระดับประเทศที่ใหญ่ที่สุด จัดโดย สกมช. (NCSA) ร่วมกับ Huawei ทดสอบทักษะการแก้โจทย์ไซเบอร์ เช่น Web Security, Cryptography, Reverse Engineering, Forensics และ Network Security ภายใต้ชื่อทีม Tactical Sword ในระดับ Senior'
   },
   {
     id: 'cert-2',
     title: 'Thailand Cyber Top Talent 2024 (TCTT 2024)',
     issuer: 'NCSA / สำนักงานคณะกรรมการการรักษาความมั่นคงปลอดภัยไซเบอร์แห่งชาติ',
     issueDate: '2024',
+    year: '2024',
+    category: 'Competition',
+    teamName: 'Tactical Sword',
+    rank: 'ระดับประชาชน (Senior Category)',
+    scoreUrl: 'https://cloud.ctf.in.th/score/?status=finished',
     thumbnail: '/certificates/tctt2024.png',
-    tags: ['Cybersecurity', 'TCTT 2024', 'Competition']
+    tags: ['Cybersecurity', 'TCTT 2024', 'Competition'],
+    description: 'การแข่งขันคัดเลือกตัวแทนสุดยอดอัจฉริยะไซเบอร์ระดับประเทศ (Senior Level) ฝึกแก้ไขโจทย์ท้าทายความปลอดภัยระบบดิจิทัลและการป้องกันการโจมตีทางไซเบอร์ในสถานการณ์จำลองแบบ Jeopardy CTF ภายใต้ทีม Tactical Sword'
   },
   {
     id: 'cert-3',
     title: 'Thailand Cyber Top Talent 2023 (TCTT 2023)',
     issuer: 'NCSA / สำนักงานคณะกรรมการการรักษาความมั่นคงปลอดภัยไซเบอร์แห่งชาติ',
     issueDate: '2023',
+    year: '2023',
+    category: 'Competition',
+    teamName: 'Tactical Sword',
+    rank: 'ระดับประชาชน (Senior Category)',
+    scoreUrl: 'https://cloud.ctf.in.th/score/?status=finished',
     thumbnail: '/certificates/tctt 2023.png',
-    tags: ['Cybersecurity', 'TCTT 2023']
+    tags: ['Cybersecurity', 'TCTT 2023'],
+    description: 'การแข่งขัน Capture The Flag เพื่อพัฒนาศักยภาพบุคลากรความมั่นคงปลอดภัยไซเบอร์ของประเทศไทย ครอบคลุมการวิเคราะห์ Malware, Digital Forensics, Exploitation และ Cryptography ภายใต้ทีม Tactical Sword'
   },
   {
     id: 'cert-4',
-    title: 'Hackfinity Battle ',
+    title: 'Hackfinity Battle',
     issuer: 'HackTheBox',
     issueDate: '2024',
+    year: '2024',
+    category: 'Competition',
+    teamName: 'Tactical Sword',
+    rank: 'Cyber Security Challenger',
+    scoreUrl: 'https://cloud.ctf.in.th/score/?status=finished',
     thumbnail: '/certificates/hackfinity.png',
-    tags: ['Hackfinity', 'Ethical Hacking', 'Security']
+    tags: ['Hackfinity', 'Ethical Hacking', 'Security'],
+    description: 'การแข่งขันจำลองการเจาะระบบและทดสอบความแข็งแกร่งทางไซเบอร์ (Ethical Hacking & Penetration Testing) โดยผู้แข่งต้องหาช่องโหว่ของเซิร์ฟเวอร์ระบบปฏิบัติการ Linux และ Windows เพื่อยึดสิทธิ์ Root/Administrator'
   },
   {
     id: 'cert-5',
     title: 'Meet The Youth Cyber Guardians Thailand 2025',
     issuer: 'Royal Thai Armed Forces Cyber Command',
     issueDate: '2025',
+    year: '2025',
+    category: 'Workshop',
+    rank: 'Youth Cyber Guardian',
     thumbnail: '/certificates/MTYCGT2025.png',
-    tags: ['Cyber Training', 'Youth Tech', 'MTYCGT']
+    tags: ['Cyber Training', 'Youth Tech', 'MTYCGT'],
+    description: 'โครงการอบรมเชิงปฏิบัติการยกระดับเยาวชนผู้เชี่ยวชาญด้านความมั่นคงปลอดภัยไซเบอร์ (MTYCGT 2025) เน้นความรู้ด้าน Incident Response, Threat Intelligence, SOC Analysis และกฎหมายความมั่นคงไซเบอร์'
   },
   {
     id: 'cert-6',
     title: 'NCSA e-Learning Penetration Test (28 Hours)',
     issuer: 'NCSA / สำนักงานคณะกรรมการการรักษาความมั่นคงปลอดภัยไซเบอร์แห่งชาติ',
     issueDate: '2024',
+    year: '2024',
+    category: 'Course',
+    rank: 'Pass (28 Hours Intensive Training)',
     thumbnail: '/certificates/NCSA 28 hr.png',
-    tags: ['NCSA 28Hr', 'Cyber Training', 'Certificate']
+    tags: ['NCSA 28Hr', 'Cyber Training', 'Certificate'],
+    description: 'หลักสูตรอบรมเข้มข้น 28 ชั่วโมง ด้านการทดสอบเจาะระบบ (Penetration Testing) และการประเมินช่องโหว่ (Vulnerability Assessment) ครอบคลุม OWASP Top 10, Web Exploit, Privilege Escalation และการเขียนรายงานความเสี่ยง'
   },
   {
     id: 'cert-7',
     title: 'NCSA e-Learning Cybersecurity Foundation Course (21 Hours)',
     issuer: 'NCSA / สำนักงานคณะกรรมการการรักษาความมั่นคงปลอดภัยไซเบอร์แห่งชาติ',
     issueDate: '2024',
+    year: '2024',
+    category: 'Course',
+    rank: 'Pass (21 Hours Certificate)',
     thumbnail: '/certificates/NCSA 21 hr.jpg',
-    tags: ['NCSA 21Hr', 'Security Certificate']
+    tags: ['NCSA 21Hr', 'Security Certificate'],
+    description: 'หลักสูตรปูพื้นฐานความมั่นคงปลอดภัยไซเบอร์ระดับชาติ 21 ชั่วโมง เรียนรู้โครงสร้างสถาปัตยกรรมความปลอดภัยเครือข่าย Cryptography, Access Control และมาตรฐาน ISO/IEC 27001'
   },
   {
     id: 'cert-8',
     title: 'NCSA e-Learning Professional Course (20 Hours)',
     issuer: 'NCSA / สำนักงานคณะกรรมการการรักษาความมั่นคงปลอดภัยไซเบอร์แห่งชาติ',
     issueDate: '2024',
+    year: '2024',
+    category: 'Course',
+    rank: 'Pass (20 Hours Certificate)',
     thumbnail: '/certificates/NCSA 20 hr.png',
-    tags: ['NCSA 20Hr', 'Cyber Defense']
+    tags: ['NCSA 20Hr', 'Cyber Defense'],
+    description: 'หลักสูตรการตั้งค่าระบบและรับมือภัยคุกคามไซเบอร์เชิงปฏิบัติการ 20 ชั่วโมง มุ่งเน้นการกำหนดนโยบายความปลอดภัย Hardening OS/Server การใช้วิธีป้องกัน Ransomware และการกำกับดูแลกฎหมาย PDPA/NCSA Act'
   },
   {
     id: 'cert-9',
     title: 'AI MINI HACKATON 2026',
     issuer: 'Bangkok University',
     issueDate: '2026',
+    year: '2026',
+    category: 'Competition',
+    teamName: 'Bangkok University Team',
+    rank: 'AI Innovation Hackathon Finalist',
     thumbnail: '/certificates/7.jpg',
-    tags: ['Senior Top Talent', 'Cyber Security']
+    tags: ['Senior Top Talent', 'Cyber Security'],
+    description: 'การแข่งขันแฮกกาธอนประยุกต์ใช้ปัญญาประดิษฐ์และนวัตกรรมดิจิทัล (AI Mini Hackathon 2026) เพื่อแก้โจทย์ธุรกิจและปัญหาสังคมจริงด้วยโมเดล AI และเทคโนโลยี Web Full-Stack'
   },
   {
     id: 'cert-10',
     title: 'BU-ITI CTF COMPETITION 2025',
     issuer: 'Bangkok University',
-    issueDate: '2024',
+    issueDate: '2025',
+    year: '2025',
+    category: 'Competition',
+    teamName: 'Tactical Sword',
+    rank: 'CTF Winner / Top Competitor',
     thumbnail: '/certificates/22.png',
-    tags: ['Achievement', 'Tech Talent']
+    tags: ['Achievement', 'Tech Talent'],
+    description: 'การแข่งขันประลองทักษะด้านไซเบอร์และการเจาะระบบภายในมหาวิทยาลัยกรุงเทพ (BU-ITI CTF 2025) ทดสอบความเชี่ยวชาญการถอดรหัส แกะรอยดิจิทัลฟอเรนสิกส์ และการค้นหาช่องโหว่ Flag'
   }
 ];
 
