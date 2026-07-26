@@ -1,33 +1,64 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { PERSONAL_DATA } from '../../data/portfolioData';
+import { useTheme } from '../../context/ThemeContext';
 
 export const Hero3DGraphic: React.FC = () => {
+  const { theme } = useTheme();
+  const isLight = theme === 'light';
   const imageSrc = PERSONAL_DATA.profileImage || "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=800&auto=format&fit=crop";
 
   return (
     <div className="relative w-full max-w-[380px] sm:max-w-[440px] aspect-square mx-auto flex items-center justify-center">
-      {/* Outer Glowing Matrix Green Rings */}
-      <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-emerald-500/20 via-green-500/15 to-emerald-400/20 blur-3xl animate-pulse" />
-      <div className="absolute inset-4 rounded-full border border-emerald-500/40 animate-spin" style={{ animationDuration: '28s' }} />
-      <div className="absolute inset-12 rounded-full border border-dashed border-emerald-400/40 animate-spin" style={{ animationDuration: '36s', animationDirection: 'reverse' }} />
+      {/* Outer Glowing Rings */}
+      <div
+        className={`absolute inset-0 rounded-full blur-3xl animate-pulse ${
+          isLight
+            ? 'bg-gradient-to-tr from-blue-500/25 via-cyan-500/20 to-sky-400/25'
+            : 'bg-gradient-to-tr from-emerald-500/20 via-green-500/15 to-emerald-400/20'
+        }`}
+      />
+      <div
+        className={`absolute inset-4 rounded-full border animate-spin ${
+          isLight ? 'border-blue-500/40' : 'border-emerald-500/40'
+        }`}
+        style={{ animationDuration: '28s' }}
+      />
+      <div
+        className={`absolute inset-12 rounded-full border border-dashed animate-spin ${
+          isLight ? 'border-cyan-500/40' : 'border-emerald-400/40'
+        }`}
+        style={{ animationDuration: '36s', animationDirection: 'reverse' }}
+      />
 
-      {/* Pure Black & Matrix Green Photo Frame */}
+      {/* 3D Profile Frame */}
       <motion.div
         initial={{ scale: 0.9, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 1, ease: 'easeOut' }}
-        className="relative z-10 w-[85%] h-[85%] rounded-[2.5rem] bg-black/90 p-4 border border-emerald-500/40 shadow-[0_0_40px_rgba(0,255,102,0.2)] backdrop-blur-xl flex flex-col items-center justify-center overflow-hidden"
+        className={`relative z-10 w-[85%] h-[85%] rounded-[2.5rem] p-4 backdrop-blur-xl flex flex-col items-center justify-center overflow-hidden transition-all duration-300 ${
+          isLight
+            ? 'bg-white/90 border border-blue-500/40 shadow-[0_0_40px_rgba(37,99,235,0.2)]'
+            : 'bg-black/90 border border-emerald-500/40 shadow-[0_0_40px_rgba(0,255,102,0.2)]'
+        }`}
       >
         {/* Matrix Grid Background Overlay */}
-        <div className="absolute inset-0 bg-matrix-grid bg-[size:20px_20px] opacity-30 pointer-events-none" />
+        <div className={`absolute inset-0 bg-matrix-grid bg-[size:20px_20px] pointer-events-none ${isLight ? 'opacity-15' : 'opacity-30'}`} />
 
-        {/* Profile Image Frame with Matrix Green Glow */}
-        <div className="relative w-44 h-44 sm:w-52 sm:h-52 rounded-full p-1.5 bg-gradient-to-tr from-emerald-400 via-green-400 to-emerald-600 shadow-[0_0_25px_rgba(0,255,102,0.5)]">
+        {/* Profile Image Frame with Glow */}
+        <div
+          className={`relative w-44 h-44 sm:w-52 sm:h-52 rounded-full p-1.5 transition-all duration-300 ${
+            isLight
+              ? 'bg-gradient-to-tr from-blue-500 via-cyan-400 to-blue-600 shadow-[0_0_25px_rgba(37,99,235,0.4)]'
+              : 'bg-gradient-to-tr from-emerald-400 via-green-400 to-emerald-600 shadow-[0_0_25px_rgba(0,255,102,0.5)]'
+          }`}
+        >
           <img
             src={imageSrc}
             alt={PERSONAL_DATA.fullName}
-            className="w-full h-full object-cover rounded-full border-2 border-black shadow-inner"
+            className={`w-full h-full object-cover rounded-full border-2 shadow-inner ${
+              isLight ? 'border-white' : 'border-black'
+            }`}
           />
         </div>
       </motion.div>

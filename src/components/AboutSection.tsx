@@ -3,12 +3,18 @@ import { GraduationCap, Award, CheckCircle2 } from 'lucide-react';
 import { EDUCATION_DATA } from '../data/portfolioData';
 import { AnimatedText } from './ui/AnimatedText';
 import { FadeIn } from './ui/FadeIn';
+import { useTheme } from '../context/ThemeContext';
 
 export const AboutSection: React.FC = () => {
+  const { theme } = useTheme();
+  const isLight = theme === 'light';
+
   return (
     <section
       id="about"
-      className="relative py-24 sm:py-32 bg-black text-white border-y border-emerald-900/40 overflow-hidden"
+      className={`relative py-24 sm:py-32 transition-colors duration-300 overflow-hidden ${
+        isLight ? 'bg-white text-slate-900 border-y border-blue-200' : 'bg-black text-white border-y border-emerald-900/40'
+      }`}
     >
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
@@ -18,18 +24,19 @@ export const AboutSection: React.FC = () => {
             <h2 className="hero-heading-green font-black uppercase tracking-tight text-4xl sm:text-5xl md:text-6xl">
               About me
             </h2>
-            {/* <p className="mt-2 text-xs font-mono font-bold uppercase tracking-widest text-emerald-400">
-              Educational Background (Secondary & Higher Education)
-            </p> */}
           </div>
         </FadeIn>
 
         {/* Character-by-Character Animated Bio Paragraph */}
         <FadeIn delay={0.15}>
-          <div className="max-w-3xl mx-auto mb-20 px-6 py-8 rounded-3xl glass-card-matrix border border-emerald-500/30 shadow-[0_0_30px_rgba(0,255,102,0.15)]">
+          <div className={`max-w-3xl mx-auto mb-20 px-6 py-8 rounded-3xl glass-card-matrix transition-all duration-300 ${
+            isLight ? 'shadow-[0_0_30px_rgba(37,99,235,0.1)] border-blue-500/30' : 'shadow-[0_0_30px_rgba(0,255,102,0.15)] border-emerald-500/30'
+          }`}>
             <AnimatedText
               text="Driven by a high ambition for continuous learning and a deep passion for ethical hacking, hands-on security labs, and CTF challenges a personal dedication I have been practicing and honing since childhood."
-              className="text-base sm:text-lg md:text-xl font-mono text-slate-200 text-center leading-relaxed tracking-wide"
+              className={`text-base sm:text-lg md:text-xl font-mono text-center leading-relaxed tracking-wide ${
+                isLight ? 'text-slate-800' : 'text-slate-200'
+              }`}
             />
           </div>
         </FadeIn>
@@ -38,70 +45,77 @@ export const AboutSection: React.FC = () => {
         <div className="space-y-8">
           <FadeIn delay={0.25}>
             <div className="flex items-center justify-center gap-3 mb-10 text-center">
-              <div className="p-3 rounded-2xl bg-black text-emerald-400 border border-emerald-500/40 shadow-[0_0_15px_rgba(0,255,102,0.2)]">
+              <div className={`p-3 rounded-2xl border transition-all duration-300 ${
+                isLight
+                  ? 'bg-white text-blue-600 border-blue-500/40 shadow-[0_0_15px_rgba(37,99,235,0.2)]'
+                  : 'bg-black text-emerald-400 border-emerald-500/40 shadow-[0_0_15px_rgba(0,255,102,0.2)]'
+              }`}>
                 <GraduationCap className="w-6 h-6" />
               </div>
-              <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+              <h3 className={`text-2xl sm:text-3xl font-extrabold tracking-tight ${isLight ? 'text-slate-900' : 'text-white'}`}>
                 Education Timeline
               </h3>
             </div>
           </FadeIn>
 
-          <div className="relative border-l-2 border-emerald-500 ml-4 sm:ml-8 pl-6 sm:pl-10 space-y-10">
+          <div className={`relative border-l-2 ml-4 sm:ml-8 pl-6 sm:pl-10 space-y-10 transition-colors duration-300 ${
+            isLight ? 'border-blue-500' : 'border-emerald-500'
+          }`}>
             {EDUCATION_DATA.map((edu, idx) => (
               <FadeIn key={edu.id} delay={0.3 + idx * 0.15}>
-                <div className="relative glass-card-matrix p-6 sm:p-8 rounded-3xl border border-emerald-500/30 hover:border-emerald-400/60 shadow-lg space-y-4">
+                <div className="relative glass-card-matrix p-6 sm:p-8 rounded-3xl shadow-lg space-y-4">
                   
                   {/* Timeline Bullet Node */}
-                  <div className="absolute -left-[37px] sm:-left-[53px] top-8 w-6 h-6 rounded-full bg-emerald-500 border-4 border-black shadow-[0_0_15px_#00FF66] flex items-center justify-center">
-                    <Award className="w-3 h-3 text-black" />
+                  <div className={`absolute -left-[37px] sm:-left-[53px] top-8 w-6 h-6 rounded-full border-4 flex items-center justify-center transition-all duration-300 ${
+                    isLight
+                      ? 'bg-blue-600 border-slate-50 shadow-[0_0_15px_#2563EB] text-white'
+                      : 'bg-emerald-500 border-black shadow-[0_0_15px_#00FF66] text-black'
+                  }`}>
+                    <Award className="w-3 h-3" />
                   </div>
 
                   <div className="flex flex-wrap items-center justify-between gap-2">
-                    <span className="inline-block px-3 py-1 rounded-full bg-black text-emerald-400 text-xs font-mono font-bold border border-emerald-500/40">
+                    <span className={`inline-block px-3 py-1 rounded-full text-xs font-mono font-bold border transition-colors ${
+                      isLight
+                        ? 'bg-blue-50 text-blue-700 border-blue-300'
+                        : 'bg-black text-emerald-400 border-emerald-500/40'
+                    }`}>
                       {edu.period}
                     </span>
 
-                    <span className="text-xs font-mono font-bold text-emerald-300 bg-black px-2.5 py-1 rounded-md border border-emerald-500/30">
+                    <span className={`text-xs font-mono font-bold px-2.5 py-1 rounded-md border transition-colors ${
+                      isLight
+                        ? 'bg-slate-100 text-blue-600 border-blue-200'
+                        : 'bg-black text-emerald-300 border-emerald-500/30'
+                    }`}>
                       {edu.subtitle || 'Information'}
                     </span>
                   </div>
 
-                  <h4 className="text-xl sm:text-2xl font-bold text-white">
+                  <h4 className={`text-xl sm:text-2xl font-bold ${isLight ? 'text-slate-900' : 'text-white'}`}>
                     {edu.title}
                   </h4>
 
-                  <p className="text-sm font-mono font-semibold text-emerald-400">
+                  <p className={`text-sm font-mono font-semibold ${isLight ? 'text-blue-600' : 'text-emerald-400'}`}>
                     {edu.organization}
                   </p>
 
                   {edu.description && (
-                    <p className="text-sm text-slate-300 leading-relaxed">
+                    <p className={`text-sm leading-relaxed ${isLight ? 'text-slate-600' : 'text-slate-300'}`}>
                       {edu.description}
                     </p>
                   )}
 
                   {edu.bullets && edu.bullets.length > 0 && (
-                    <ul className="space-y-2 pt-2 border-t border-emerald-900/40">
+                    <ul className={`space-y-2 pt-2 border-t ${isLight ? 'border-slate-200' : 'border-emerald-900/40'}`}>
                       {edu.bullets.map((bullet, i) => (
-                        <li key={i} className="flex items-start gap-2 text-xs sm:text-sm text-slate-300">
-                          <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                        <li key={i} className={`flex items-start gap-2 text-xs sm:text-sm ${isLight ? 'text-slate-600' : 'text-slate-300'}`}>
+                          <CheckCircle2 className={`w-4 h-4 shrink-0 mt-0.5 ${isLight ? 'text-blue-600' : 'text-emerald-400'}`} />
                           <span>{bullet}</span>
                         </li>
                       ))}
                     </ul>
                   )}
-
-                  {/* <div className="flex flex-wrap gap-2 pt-2">
-                    {edu.tags?.map((tag) => (
-                      <span
-                        key={tag}
-                        className="px-2.5 py-1 rounded-md bg-black text-emerald-400 text-xs font-mono font-semibold border border-emerald-500/30"
-                      >
-                        #{tag}
-                      </span>
-                    ))}
-                  </div> */}
                 </div>
               </FadeIn>
             ))}

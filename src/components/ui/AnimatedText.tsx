@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import { useTheme } from '../../context/ThemeContext';
 
 interface AnimatedTextProps {
   text: string;
@@ -50,15 +51,23 @@ interface CharacterProps {
 }
 
 const Character: React.FC<CharacterProps> = ({ char, range, progress }) => {
+  const { theme } = useTheme();
+  const isLight = theme === 'light';
   const opacity = useTransform(progress, range, [0.2, 1]);
   const y = useTransform(progress, range, [4, 0]);
 
   return (
     <span className="relative inline-block px-[0.5px]">
-      <span className="opacity-25 text-slate-600 select-none font-mono font-medium">{char}</span>
+      <span className={`select-none font-mono font-medium ${isLight ? 'opacity-30 text-slate-400' : 'opacity-25 text-slate-600'}`}>
+        {char}
+      </span>
       <motion.span
         style={{ opacity, y }}
-        className="absolute left-0 top-0 text-emerald-400 font-semibold font-mono drop-shadow-[0_0_8px_rgba(0,255,102,0.5)]"
+        className={`absolute left-0 top-0 font-semibold font-mono ${
+          isLight
+            ? 'text-blue-600 drop-shadow-[0_0_8px_rgba(37,99,235,0.4)]'
+            : 'text-emerald-400 drop-shadow-[0_0_8px_rgba(0,255,102,0.5)]'
+        }`}
       >
         {char}
       </motion.span>
