@@ -15,14 +15,14 @@ export const PERSONAL_DATA = {
   email: "chakkaphat.luna@gmail.com",
   address: "5/4 Mukdahan Patchasumpat Rd.",
   dateOfBirth: "01 May 2005",
-  profileImage: " ",
+  profileImage: "",
 };
 
 export const EDUCATION_DATA: TimelineItem[] = [
   {
     id: 'edu-1',
     period: '2023 - Present',
-    title: 'Bachelor of Science (Computer Science - Data Science and Cybersecurity)',
+    title: 'Higher Education: Bachelor of Science (Information Technology)',
     subtitle: 'Bangkok University',
     organization: 'Bangkok University',
     description: '',
@@ -32,24 +32,23 @@ export const EDUCATION_DATA: TimelineItem[] = [
   {
     id: 'edu-2',
     period: '2017 - 2023',
-    title: 'MUKDAHAN SCHOOL (Science-Math Program)',
+    title: 'MUKDAHAN SCHOOL',
     subtitle: 'High School',
-    organization: 'High School',
+    organization: 'Secondary Education: Junior & Senior High School (Science-Math Program)',
     description: '',  
     bullets: [],
     tags: ['MUKDAHAN SCHOOL']
+  },
+  {
+    id: 'edu-3',
+    period: '2011 - 2017',
+    title: 'Elementary Saint Joseph Mukdahan School',
+    subtitle: 'Elementary',
+    organization: 'Primary Education: Elementary School',
+    description: '',  
+    bullets: [],
+    tags: ['SaintJosephMukdahan']
   }
-  // ,
-  // {
-  //   id: 'edu-3',
-  //   period: '2011 - 2017',
-  //   title: 'Saint Joseph Mukdahan School',
-  //   subtitle: 'Elementary',
-  //   organization: 'Elementary School',
-  //   description: '',  
-  //   bullets: [],
-  //   tags: ['SaintJosephMukdahan']
-  // }
 ];
 
 export const EXPERIENCE_DATA: TimelineItem[] = [
@@ -80,11 +79,11 @@ export const PROJECTS_DATA: Project[] = [
     ],
     techStack: ['React', 'TypeScript', 'Node.js'],
     description: 'An AI powered job interview simulation web application designed to help job seekers and students practice interview questions in real-time. The system processes speech and text responses via Botnoi Voice & NLP APIs to simulate realistic interview scenarios with instant feedback.',
-    coverImage: '/AI interview pic.png',
+    coverImage: './AI interview pic.png',
     images: [
-      '/AI interview pic1.png',
-      '/AI interview pic2.png',
-      '/AI interview pic3.png'
+      './AI interview pic1.png',
+      './AI interview pic2.png',
+      './AI interview pic3.png'
     ],
     liveDemoUrl: 'https://cs-497-fronted.vercel.app/',
     githubUrl: 'https://github.com/Chakkaphat0/CS497-Fronted',
@@ -102,10 +101,10 @@ export const PROJECTS_DATA: Project[] = [
     ],
     techStack: ['React', 'Tailwind CSS'],
     description: "An interactive web simulator for the Banker's Algorithm a deadlock avoidance algorithm that tests system safety by simulating resource allocation across processes using Available, Maximum, Allocation, and Need matrices.",
-    coverImage: '/banker-sim/b1.png',
+    coverImage: './banker-sim/b1.png',
     images: [
-      '/banker-sim/b2.png',
-      '/banker-sim/b3.png'
+      './banker-sim/b2.png',
+      './banker-sim/b3.png'
     ],
     liveDemoUrl: 'https://chakkaphat0.github.io/CS-327C-/',
     githubUrl: 'https://github.com/Chakkaphat0/CS-327C-',
@@ -136,7 +135,7 @@ export const CERTIFICATES_DATA: Certificate[] = [
     year: '2025',
     category: 'Competition',
     scoreUrl: 'https://cloud.ctf.in.th/score/view.html?t=BQU14LUPQ1',
-    thumbnail: '/certificates/tctt2025.png',
+    thumbnail: './certificates/tctt2025.png',
     tags: ['Cybersecurity', 'CTF', 'Web Hacking', 'Reverse Engineering'],
     description: "Thailand's largest national Capture The Flag (CTF) cybersecurity competition organized by NCSA and Huawei. Tested advanced security skills including Web Exploitation, Cryptography, Reverse Engineering, Digital Forensics, and Network Security."
   },
@@ -148,7 +147,7 @@ export const CERTIFICATES_DATA: Certificate[] = [
     year: '2024',
     category: 'Competition',
     scoreUrl: 'https://cloud.ctf.in.th/score/view.html?t=QR66WITOOJ',
-    thumbnail: '/certificates/tctt2024.png',
+    thumbnail: './certificates/tctt2024.png',
     tags: ['Cybersecurity', 'TCTT 2024', 'Competition'],
     description: "Thailand's largest national Capture The Flag (CTF) cybersecurity competition organized by NCSA and Huawei. Tested advanced security skills including Web Exploitation, Cryptography, Reverse Engineering, Digital Forensics, and Network Security."
   },
@@ -160,7 +159,7 @@ export const CERTIFICATES_DATA: Certificate[] = [
     year: '2023',
     category: 'Competition',
     scoreUrl: 'https://cloud.ctf.in.th/score/view.html?t=2HFLHQZCMI',
-    thumbnail: '/certificates/tctt 2023.png',
+    thumbnail: './certificates/tctt 2023.png',
     tags: ['Cybersecurity', 'TCTT 2023'],
     description: "Thailand's largest national Capture The Flag (CTF) cybersecurity competition organized by NCSA and Huawei. Tested advanced security skills including Web Exploitation, Cryptography, Reverse Engineering, Digital Forensics, and Network Security."
   },
@@ -172,7 +171,7 @@ export const CERTIFICATES_DATA: Certificate[] = [
     year: '2024',
     category: 'Competition',
     scoreUrl: 'https://tryhackme.com/hackfinity',
-    thumbnail: '/certificates/hackfinity.png',
+    thumbnail: './certificates/hackfinity.png',
     tags: ['Hackfinity', 'Ethical Hacking', 'Security'],
     description: 'A jeopardy-style Capture The Flag (CTF) competition hosted by TryHackMe, challenging participants across web exploitation, digital forensics, cryptography, reverse engineering, and blockchain security with hands-on real-world vulnerability scenarios.'
   },
@@ -184,7 +183,7 @@ export const CERTIFICATES_DATA: Certificate[] = [
     year: '2025',
     category: 'Workshop',
     scoreUrl: 'https://ctf.in.th/news/3953/',
-    thumbnail: '/certificates/MTYCGT2025.png',
+    thumbnail: './certificates/MTYCGT2025.png',
     tags: ['Cyber Training', 'Youth Tech', 'MTYCGT'],
     description: 'A national cybersecurity training program organized by the Royal Thai Armed Forces Cyber Command in collaboration with NCSA, bringing together young cyber talents for intensive hands-on workshops covering Incident Response, Threat Intelligence, SOC Analysis, and Cyber Law.'
   },
@@ -196,7 +195,7 @@ export const CERTIFICATES_DATA: Certificate[] = [
     year: '2024',
     category: 'Course',
     scoreUrl: 'https://www.thnca.or.th/our-services/ncsa-e-learning/penetration-test-online/',
-    thumbnail: '/certificates/NCSA 28 hr.png',
+    thumbnail: './certificates/NCSA 28 hr.png',
     tags: ['NCSA 28Hr', 'Cyber Training', 'Certificate'],
     description: 'An intensive 28-hour specialized course from the Thailand National Cyber Academy (THNCA) covering Penetration Testing methodologies, OWASP Top 10 vulnerability assessment, web exploitation techniques, privilege escalation, and professional security reporting.'
   },
@@ -208,7 +207,7 @@ export const CERTIFICATES_DATA: Certificate[] = [
     year: '2024',
     category: 'Course',
     scoreUrl: 'https://www.thnca.or.th/our-services/ncsa-e-learning/',
-    thumbnail: '/certificates/NCSA 21 hr.jpg',
+    thumbnail: './certificates/NCSA 21 hr.jpg',
     tags: ['NCSA 21Hr', 'Security Certificate'],
     description: 'A 21-hour foundational cybersecurity course from the Thailand National Cyber Academy (THNCA) covering information security principles (CIA Triad), network security architecture, cryptography fundamentals, access control, and ISO/IEC 27001 security standards.'
   },
@@ -220,7 +219,7 @@ export const CERTIFICATES_DATA: Certificate[] = [
     year: '2024',
     category: 'Course',
     scoreUrl: 'https://www.thnca.or.th/our-services/ncsa-e-learning/advanced-online-2/',
-    thumbnail: '/certificates/NCSA 20 hr.png',
+    thumbnail: './certificates/NCSA 20 hr.png',
     tags: ['NCSA 20Hr', 'Cyber Defense'],
     description: 'A 20-hour professional-level course from the Thailand National Cyber Academy (THNCA) aligned with CompTIA Security+ standards, covering server hardening, ransomware defense strategies, cybersecurity governance, security policy enforcement, and PDPA compliance.'
   },
@@ -232,7 +231,7 @@ export const CERTIFICATES_DATA: Certificate[] = [
     year: '2026',
     category: 'Competition',
     scoreUrl: 'https://www.bu.ac.th/en/featured-stories/2468',
-    thumbnail: '/certificates/7.jpg',
+    thumbnail: './certificates/7.jpg',
     tags: ['AI Hackathon', 'Innovation'],
     description: 'An AI Mini Hackathon organized by the School of Information Technology and Innovation at Bangkok University, in which students competed in small groups to develop real-world solutions using AI technology, with evaluation and awards presented by a judging panel.'
   },
@@ -244,7 +243,7 @@ export const CERTIFICATES_DATA: Certificate[] = [
     year: '2025',
     category: 'Competition',
     scoreUrl: 'https://www.bu.ac.th/en/featured-stories/1848',
-    thumbnail: '/certificates/22.png',
+    thumbnail: './certificates/22.png',
     tags: ['BU CTF', 'Cybersecurity'],
     description: 'An inaugural Capture The Flag cybersecurity competition hosted by the School of Information Technology and Innovation (BU-ITI) at Bangkok University in collaboration with G-Able (CyberGenics) and NCSA, featuring 20 student teams competing in penetration testing, cryptography, and digital forensics challenges.'
   }
