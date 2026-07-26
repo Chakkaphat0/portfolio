@@ -16,7 +16,7 @@ export const AnimatedText: React.FC<AnimatedTextProps> = ({ text, className = ''
   const words = text.split(' ');
 
   return (
-    <p ref={targetRef} className={`flex flex-wrap justify-center leading-relaxed tracking-wide ${className}`}>
+    <p ref={targetRef} className={`flex flex-wrap justify-center leading-relaxed tracking-wide font-mono ${className}`}>
       {words.map((word, wordIndex) => {
         const characters = word.split('');
         return (
@@ -55,10 +55,10 @@ const Character: React.FC<CharacterProps> = ({ char, range, progress }) => {
 
   return (
     <span className="relative inline-block px-[0.5px]">
-      <span className="opacity-25 text-slate-600 select-none font-sans font-medium">{char}</span>
+      <span className="opacity-25 text-slate-600 select-none font-mono font-medium">{char}</span>
       <motion.span
         style={{ opacity, y }}
-        className="absolute left-0 top-0 text-emerald-400 font-semibold font-sans drop-shadow-[0_0_8px_rgba(0,255,102,0.4)]"
+        className="absolute left-0 top-0 text-emerald-400 font-semibold font-mono drop-shadow-[0_0_8px_rgba(0,255,102,0.5)]"
       >
         {char}
       </motion.span>

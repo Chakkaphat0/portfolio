@@ -15,7 +15,7 @@ export const PERSONAL_DATA = {
   email: "chakkaphat.luna@gmail.com",
   address: "5/4 Mukdahan Patchasumpat Rd.",
   dateOfBirth: "01 May 2005",
-  profileImage: "",
+  profileImage: " ",
 };
 
 export const EDUCATION_DATA: TimelineItem[] = [
@@ -32,23 +32,24 @@ export const EDUCATION_DATA: TimelineItem[] = [
   {
     id: 'edu-2',
     period: '2017 - 2023',
-    title: 'MUKDAHAN SCHOOL',
+    title: 'MUKDAHAN SCHOOL (Science-Math Program)',
     subtitle: 'High School',
-    organization: 'Junior & Senior High School (Science-Math Program)',
+    organization: 'High School',
     description: '',  
     bullets: [],
     tags: ['MUKDAHAN SCHOOL']
-  },
-  {
-    id: 'edu-3',
-    period: '2011 - 2017',
-    title: 'Elementary Saint Joseph Mukdahan School',
-    subtitle: 'Elementary',
-    organization: 'Elementary School',
-    description: '',  
-    bullets: [],
-    tags: ['SaintJosephMukdahan']
   }
+  // ,
+  // {
+  //   id: 'edu-3',
+  //   period: '2011 - 2017',
+  //   title: 'Saint Joseph Mukdahan School',
+  //   subtitle: 'Elementary',
+  //   organization: 'Elementary School',
+  //   description: '',  
+  //   bullets: [],
+  //   tags: ['SaintJosephMukdahan']
+  // }
 ];
 
 export const EXPERIENCE_DATA: TimelineItem[] = [
@@ -78,7 +79,7 @@ export const PROJECTS_DATA: Project[] = [
       'Integrated AI / Voice API for real-time interview evaluation'
     ],
     techStack: ['React', 'TypeScript', 'Node.js'],
-    description: 'An AI-powered job interview simulation web application designed to help job seekers and students practice interview questions in real-time. The system processes speech and text responses via Botnoi Voice & NLP APIs to simulate realistic interview scenarios with instant feedback.',
+    description: 'An AI powered job interview simulation web application designed to help job seekers and students practice interview questions in real-time. The system processes speech and text responses via Botnoi Voice & NLP APIs to simulate realistic interview scenarios with instant feedback.',
     coverImage: '/AI interview pic.png',
     images: [
       '/AI interview pic1.png',
@@ -87,6 +88,27 @@ export const PROJECTS_DATA: Project[] = [
     ],
     liveDemoUrl: 'https://cs-497-fronted.vercel.app/',
     githubUrl: 'https://github.com/Chakkaphat0/CS497-Fronted',
+    featured: true
+  },
+  {
+    id: 'proj-2',
+    title: "Banker's Algorithm Simulator",
+    category: 'Academic',
+    role: 'Developer',
+    responsibility: [
+      'Implemented safety state evaluation & deadlock avoidance algorithm',
+      'Managed dynamic resource matrices: Available, Maximum, Allocation, and Need',
+      'Simulated process execution sequence and safe resource release'
+    ],
+    techStack: ['React', 'Tailwind CSS'],
+    description: "An interactive web simulator for the Banker's Algorithm a deadlock avoidance algorithm that tests system safety by simulating resource allocation across processes using Available, Maximum, Allocation, and Need matrices.",
+    coverImage: '/banker-sim/b1.png',
+    images: [
+      '/banker-sim/b2.png',
+      '/banker-sim/b3.png'
+    ],
+    liveDemoUrl: 'https://chakkaphat0.github.io/CS-327C-/',
+    githubUrl: 'https://github.com/Chakkaphat0/CS-327C-',
     featured: true
   }
 ];

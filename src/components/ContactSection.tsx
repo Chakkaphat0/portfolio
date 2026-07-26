@@ -1,5 +1,5 @@
 import React from 'react';
-import { Mail, Phone, Github, Linkedin, ArrowUp, Sparkles } from 'lucide-react';
+import { Mail, Phone, Github, Linkedin, ArrowUp } from 'lucide-react';
 import { CONTACT_DATA, PERSONAL_DATA } from '../data/portfolioData';
 import { FadeIn } from './ui/FadeIn';
 
@@ -18,10 +18,10 @@ export const ContactSection: React.FC = () => {
         {/* Title */}
         <FadeIn delay={0}>
           <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-black/90 border border-emerald-500/40 text-emerald-400 text-xs font-mono font-semibold uppercase tracking-widest shadow-[0_0_15px_rgba(0,255,102,0.2)]">
+            {/* <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-black/90 border border-emerald-500/40 text-emerald-400 text-xs font-mono font-semibold uppercase tracking-widest shadow-[0_0_15px_rgba(0,255,102,0.2)]">
               <Sparkles className="w-3.5 h-3.5 text-emerald-400" />
-              <span>[ROOT@CHAKKAPHAT ~] Contact</span>
-            </div>
+              <span>Contact</span> 
+            </div> */}
 
             <h2 className="text-gradient-green font-black uppercase tracking-tight text-4xl sm:text-6xl md:text-7xl">
               Get In Touch

@@ -26,10 +26,10 @@ export const AboutSection: React.FC = () => {
 
         {/* Character-by-Character Animated Bio Paragraph */}
         <FadeIn delay={0.15}>
-          <div className="max-w-3xl mx-auto mb-20 px-6 py-8 rounded-3xl glass-card-matrix border border-emerald-500/30 shadow-[0_0_30px_rgba(0,255,102,0.1)]">
+          <div className="max-w-3xl mx-auto mb-20 px-6 py-8 rounded-3xl glass-card-matrix border border-emerald-500/30 shadow-[0_0_30px_rgba(0,255,102,0.15)]">
             <AnimatedText
-              text="We love we live we life ."
-              className="text-base sm:text-lg md:text-xl font-medium text-slate-200 text-center leading-relaxed tracking-wide"
+              text="Driven by a high ambition for continuous learning and a deep passion for ethical hacking, hands-on security labs, and CTF challenges a personal dedication I have been practicing and honing since childhood."
+              className="text-base sm:text-lg md:text-xl font-mono text-slate-200 text-center leading-relaxed tracking-wide"
             />
           </div>
         </FadeIn>
@@ -53,7 +53,7 @@ export const AboutSection: React.FC = () => {
                 <div className="relative glass-card-matrix p-6 sm:p-8 rounded-3xl border border-emerald-500/30 hover:border-emerald-400/60 shadow-lg space-y-4">
                   
                   {/* Timeline Bullet Node */}
-                  <div className="absolute -left-[31px] sm:-left-[47px] top-8 w-6 h-6 rounded-full bg-emerald-500 border-4 border-black shadow-[0_0_15px_#00FF66] flex items-center justify-center">
+                  <div className="absolute -left-[37px] sm:-left-[53px] top-8 w-6 h-6 rounded-full bg-emerald-500 border-4 border-black shadow-[0_0_15px_#00FF66] flex items-center justify-center">
                     <Award className="w-3 h-3 text-black" />
                   </div>
 

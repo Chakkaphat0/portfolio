@@ -82,7 +82,7 @@ export const ProjectsSection: React.FC = () => {
                       <h4 className="text-xs font-mono font-bold uppercase tracking-widest text-emerald-400">
                         Project Description
                       </h4>
-                      <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-normal">
+                      <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-normal whitespace-pre-line">
                         {project.description}
                       </p>
                     </div>

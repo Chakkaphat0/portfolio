@@ -31,7 +31,7 @@ export const HeroSection: React.FC = () => {
                   <User className="w-4 h-4 text-emerald-400" />
                   <span>Personal Profile</span>
                 </div>
-                <h1 className="hero-heading font-black tracking-tight text-4xl sm:text-5xl lg:text-6xl">
+                <h1 className="hero-heading font-black font-mono tracking-tight text-4xl sm:text-5xl lg:text-6xl">
                   <MatrixTextReveal text={PERSONAL_DATA.fullName} delay={0.1} />
                 </h1>
                 <p className="text-lg sm:text-xl font-mono font-bold text-emerald-400 flex items-center gap-2 pt-1">

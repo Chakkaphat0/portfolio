@@ -7,14 +7,15 @@ interface MatrixTextRevealProps {
   delay?: number;
 }
 
-const CHARS = '01#$@%&*!?X790xF4A';
+// Clean Matrix Hex & Binary characters with identical font height and baseline
+const CHARS = '0123456789ABCDEF';
 
 export const MatrixTextReveal: React.FC<MatrixTextRevealProps> = ({
   text,
   className = '',
   delay = 0,
 }) => {
-  const [displayText, setDisplayText] = useState('');
+  const [displayText, setDisplayText] = useState(text);
   const ref = React.useRef<HTMLSpanElement>(null);
   const isInView = useInView(ref, { once: true, margin: '-20px' });
 
@@ -65,12 +66,11 @@ export const MatrixTextReveal: React.FC<MatrixTextRevealProps> = ({
   return (
     <motion.span
       ref={ref}
-      initial={{ opacity: 0, y: 10 }}
-      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
-      transition={{ duration: 0.5, delay }}
-      className={`font-mono inline-block ${className}`}
+      initial={{ opacity: 1 }}
+      animate={{ opacity: 1 }}
+      className={`font-mono inline ${className}`}
     >
-      {displayText || text.replace(/./g, '0')}
+      {displayText}
     </motion.span>
   );
 };
