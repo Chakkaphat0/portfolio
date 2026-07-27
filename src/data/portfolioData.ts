@@ -32,23 +32,24 @@ export const EDUCATION_DATA: TimelineItem[] = [
   {
     id: 'edu-2',
     period: '2017 - 2023',
-    title: 'MUKDAHAN SCHOOL',
+    title: 'MUKDAHAN SCHOOL (Science-Math Program)',
     subtitle: 'High School',
-    organization: 'Secondary Education: Junior & Senior High School (Science-Math Program)',
+    organization: 'High School',
     description: '',  
     bullets: [],
     tags: ['MUKDAHAN SCHOOL']
-  },
-  {
-    id: 'edu-3',
-    period: '2011 - 2017',
-    title: 'Elementary Saint Joseph Mukdahan School',
-    subtitle: 'Elementary',
-    organization: 'Primary Education: Elementary School',
-    description: '',  
-    bullets: [],
-    tags: ['SaintJosephMukdahan']
   }
+  // ,
+  // {
+  //   id: 'edu-3',
+  //   period: '2011 - 2017',
+  //   title: 'Elementary Saint Joseph Mukdahan School',
+  //   subtitle: 'Elementary',
+  //   organization: 'Primary Education: Elementary School',
+  //   description: '',  
+  //   bullets: [],
+  //   tags: ['SaintJosephMukdahan']
+  // }
 ];
 
 export const EXPERIENCE_DATA: TimelineItem[] = [
