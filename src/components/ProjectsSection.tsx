@@ -11,7 +11,7 @@ export const ProjectsSection: React.FC = () => {
 
   return (
     <section id="projects" className={`relative py-24 sm:py-32 transition-colors duration-300 overflow-hidden ${
-      isLight ? 'bg-slate-50 text-slate-900' : 'bg-black text-white'
+      isLight ? 'bg-transparent text-slate-900' : 'bg-transparent text-white'
     }`}>
       {/* Background Glow */}
       <div className={`absolute top-1/3 right-0 w-96 h-96 rounded-full blur-3xl pointer-events-none -z-10 ${
@@ -53,7 +53,7 @@ export const ProjectsSection: React.FC = () => {
                       0{index + 1}
                     </span>
                     <h3 className={`text-2xl sm:text-3xl font-extrabold tracking-tight ${
-                      isLight ? 'text-slate-900' : 'text-white'
+                      isLight ? 'text-blue-600' : 'text-white'
                     }`}>
                       {project.title}
                     </h3>

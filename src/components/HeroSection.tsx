@@ -16,18 +16,16 @@ export const HeroSection: React.FC = () => {
     <section
       id="home"
       className={`relative min-h-screen pt-28 pb-16 flex flex-col justify-between overflow-hidden transition-colors duration-300 ${
-        isLight ? 'bg-slate-50 text-slate-900' : 'bg-black text-white'
+        isLight ? 'bg-transparent text-slate-900' : 'bg-transparent text-white'
       }`}
     >
       {/* Background Matrix Grid & Glow Effects */}
       <div className={`absolute inset-0 bg-matrix-grid bg-[size:30px_30px] pointer-events-none ${isLight ? 'opacity-10' : 'opacity-20'}`} />
-      <div
-        className={`absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full blur-3xl pointer-events-none -z-10 ${
-          isLight
-            ? 'bg-gradient-to-tr from-blue-500/15 via-cyan-500/10 to-sky-500/15'
-            : 'bg-gradient-to-tr from-emerald-500/10 via-green-500/10 to-teal-500/10'
-        }`}
-      />
+      {!isLight && (
+        <div
+          className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full blur-3xl pointer-events-none -z-10 bg-gradient-to-tr from-emerald-500/10 via-green-500/10 to-teal-500/10"
+        />
+      )}
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full my-auto relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">

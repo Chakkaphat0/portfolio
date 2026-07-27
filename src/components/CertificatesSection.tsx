@@ -19,7 +19,7 @@ export const CertificatesSection: React.FC = () => {
 
   return (
     <section id="certificates" className={`py-24 sm:py-32 relative overflow-hidden transition-colors duration-300 ${
-      isLight ? 'bg-white text-slate-900 border-t border-blue-200' : 'bg-black text-white border-t border-emerald-900/40'
+      isLight ? 'bg-transparent text-slate-900 border-t border-blue-200/40' : 'bg-transparent text-white border-t border-emerald-900/40'
     }`}>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         

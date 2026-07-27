@@ -14,11 +14,11 @@ export const ContactSection: React.FC = () => {
 
   return (
     <footer id="contact" className={`relative py-24 sm:py-32 overflow-hidden border-t transition-colors duration-300 ${
-      isLight ? 'bg-slate-100 text-slate-900 border-blue-200' : 'bg-black text-white border-emerald-900/50'
+      isLight ? 'bg-transparent text-slate-900 border-blue-200/40' : 'bg-transparent text-white border-emerald-900/50'
     }`}>
       {/* Glow Highlights */}
       <div className={`absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[300px] bg-gradient-to-b blur-3xl pointer-events-none ${
-        isLight ? 'from-blue-500/20 via-cyan-500/10 to-transparent' : 'from-emerald-500/15 via-green-500/10 to-transparent'
+        isLight ? 'from-blue-500/04 via-sky-400/02 to-transparent' : 'from-emerald-500/15 via-green-500/10 to-transparent'
       }`} />
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

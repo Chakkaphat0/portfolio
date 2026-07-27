@@ -11,13 +11,11 @@ export const Hero3DGraphic: React.FC = () => {
   return (
     <div className="relative w-full max-w-[380px] sm:max-w-[440px] aspect-square mx-auto flex items-center justify-center">
       {/* Outer Glowing Rings */}
-      <div
-        className={`absolute inset-0 rounded-full blur-3xl animate-pulse ${
-          isLight
-            ? 'bg-gradient-to-tr from-blue-500/25 via-cyan-500/20 to-sky-400/25'
-            : 'bg-gradient-to-tr from-emerald-500/20 via-green-500/15 to-emerald-400/20'
-        }`}
-      />
+      {!isLight && (
+        <div
+          className="absolute inset-0 rounded-full blur-3xl animate-pulse bg-gradient-to-tr from-emerald-500/20 via-green-500/15 to-emerald-400/20"
+        />
+      )}
       <div
         className={`absolute inset-4 rounded-full border animate-spin ${
           isLight ? 'border-blue-500/40' : 'border-emerald-500/40'
