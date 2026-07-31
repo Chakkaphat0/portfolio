@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowDown, Phone, Mail, MapPin, Calendar, GraduationCap, User } from 'lucide-react';
+import { ArrowDown, Phone, Mail, Calendar, GraduationCap, User } from 'lucide-react';
 import { PERSONAL_DATA } from '../data/portfolioData';
 import { Magnet } from './ui/Magnet';
 import { Hero3DGraphic } from './ui/3DVisuals';
@@ -86,19 +86,6 @@ export const HeroSection: React.FC = () => {
                     >
                       <MatrixTextReveal text={PERSONAL_DATA.email} delay={0.5} />
                     </a>
-                  </div>
-                </div>
-
-                {/* Address */}
-                <div className="space-y-1">
-                  <div className={`flex items-center gap-2 text-xs font-bold uppercase tracking-wider ${isLight ? 'text-blue-600' : 'text-emerald-400'}`}>
-                    <MapPin className="w-3.5 h-3.5" />
-                    <span>Address:</span>
-                  </div>
-                  <div className="pl-5">
-                    <p className={`text-base sm:text-lg font-semibold ${isLight ? 'text-slate-800' : 'text-white'}`}>
-                      <MatrixTextReveal text={PERSONAL_DATA.address} delay={0.7} />
-                    </p>
                   </div>
                 </div>
 

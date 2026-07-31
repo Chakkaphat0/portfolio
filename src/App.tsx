@@ -2,7 +2,10 @@ import React from 'react';
 import { Navbar } from './components/Navbar';
 import { HeroSection } from './components/HeroSection';
 import { AboutSection } from './components/AboutSection';
+import { SkillsSection } from './components/SkillsSection';
 import { ProjectsSection } from './components/ProjectsSection';
+import { ActivitiesSection } from './components/ActivitiesSection';
+import { CtfScoresSection } from './components/CtfScoresSection';
 import { CertificatesSection } from './components/CertificatesSection';
 import { ContactSection } from './components/ContactSection';
 import { ElectricBackground } from './components/ui/ElectricBackground';
@@ -20,7 +23,10 @@ export const App: React.FC = () => {
       <main className="relative z-10">
         <HeroSection />
         <AboutSection />
+        <SkillsSection />
         <ProjectsSection />
+        <ActivitiesSection />
+        <CtfScoresSection />
         <CertificatesSection />
       </main>
 

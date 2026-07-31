@@ -3,7 +3,10 @@ import { NavItem, Project, TimelineItem, Activity, Certificate } from '../types/
 export const NAV_ITEMS: NavItem[] = [
   { label: 'Home', href: '#home' },
   { label: 'About', href: '#about' },
+  { label: 'Skills', href: '#skills' },
   { label: 'Projects', href: '#projects' },
+  { label: 'Activities', href: '#activities' },
+  { label: 'CTF Records', href: '#ctf-scores' },
   { label: 'Certificates', href: '#certificates' },
   { label: 'Contact', href: '#contact' },
 ];
@@ -13,18 +16,17 @@ export const PERSONAL_DATA = {
   university: "Bangkok University",
   phone: "0656288987",
   email: "chakkaphat.luna@gmail.com",
-  address: "5/4 Mukdahan Patchasumpat Rd.",
   dateOfBirth: "01 May 2005",
-  profileImage: "",
+  profileImage: "./profile.jpg",
 };
 
 export const EDUCATION_DATA: TimelineItem[] = [
   {
     id: 'edu-1',
     period: '2023 - Present',
-    title: 'Higher Education: Bachelor of Science (Information Technology)',
-    subtitle: 'Bangkok University',
-    organization: 'Bangkok University',
+    title: '  Bangkok University',
+    subtitle: 'Data Science and Cybersecurity',
+    organization: 'Bachelor of Science (Computer Science)',
     description: '',
     bullets: [],
     tags: ['Bangkok University', 'IT']
@@ -32,8 +34,8 @@ export const EDUCATION_DATA: TimelineItem[] = [
   {
     id: 'edu-2',
     period: '2017 - 2023',
-    title: 'MUKDAHAN SCHOOL (Science-Math Program)',
-    subtitle: 'High School',
+    title: 'Mukdahan School',
+    subtitle: 'Science-Math Program',
     organization: 'High School',
     description: '',  
     bullets: [],
@@ -116,14 +118,36 @@ export const PROJECTS_DATA: Project[] = [
 export const ACTIVITIES_DATA: Activity[] = [
   {
     id: 'act-1',
-    title: 'Bangkok University Hackathon & Tech Event',
+    title: 'BU-ITI CTF COMPETITION 2025',
     category: 'Competition',
-    date: '2024',
-    role: 'Web Developer',
-    organization: 'Bangkok University',
-    description: 'Participated in software development hackathon and presented digital innovation solutions.',
-    image: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=800&auto=format&fit=crop',
-    achievement: '🏆 Participant & Innovation Finalist'
+    date: '09 May 2025',
+    role: 'CTF Competitor & Penetration Tester',
+    organization: 'School of Information Technology and Innovation, Bangkok University',
+    description: 'Competed in Bangkok University\'s inaugural Capture The Flag (CTF) cybersecurity competition organized by BU-ITI in collaboration with NCSA and CyberGenics (G-Able). Solved Jeopardy-style security challenges across Web Exploitation, Cryptography, Reverse Engineering, and Digital Forensics.',
+    image: './Event/BU-ITI CTF COMPETITION 2025 9 พฤษภาคม 2025.png',
+    achievement: '🏆 Competitor & Top Cybersecurity Talent'
+  },
+  {
+    id: 'act-2',
+    title: 'Meet The Youth Cyber Guardians Thailand 2025',
+    category: 'Club',
+    date: '07 September 2025',
+    role: 'Youth Cyber Defense Volunteer & Participant',
+    organization: 'Royal Thai Armed Forces Cyber Command & NCSA',
+    description: 'Joined the national youth cybersecurity initiative hosted by the Royal Thai Armed Forces Cyber Command in collaboration with NCSA. Engaged in hands-on Red Team vs Blue Team cyber simulations, Threat Intelligence (ISR), OSINT investigations, and national security defense workshops.',
+    image: './Event/Meet The Youth Cyber Guardians Thailand 2025 7 กันยายน พศ 2568.jpg',
+    achievement: '🛡️ Certified Youth Cyber Security Guardian'
+  },
+  {
+    id: 'act-3',
+    title: 'IT Empowering Day: in the Era of AI',
+    category: 'Conference',
+    date: '21 May 2024',
+    role: 'Student Innovator & Seminar Participant',
+    organization: 'School of Information Technology and Innovation, Bangkok University',
+    description: 'Attended specialized AI technology seminars, career path talks from global industry experts, and hands-on workshops covering AI in Action, Senior Project Showcase evaluations, and tech industry innovation networking.',
+    image: './Event/IT Empowering Day in the Era of AI 21 พฤษภาคม พศ 2569.jpg',
+    achievement: '💡 AI Technology & Innovation Seminar Attendee'
   }
 ];
 
@@ -253,7 +277,101 @@ export const CERTIFICATES_DATA: Certificate[] = [
 export const CONTACT_DATA = {
   email: 'chakkaphat.luna@gmail.com',
   phone: '0656288987',
-  address: '5/4 Mukdahan Patchasumpat Rd.',
   github: 'https://github.com/Chakkaphat0',
-  linkedin: 'https://linkedin.com/in/chakkaphat-lunabut'
+  linkedin: 'https://www.linkedin.com/in/chakkaphat-lunabut-950aa5324/'
 };
+
+export const TECHNICAL_SKILLS_DATA = {
+  developer: {
+    title: 'Developer',
+    subtitle: 'Software Development & Web Technologies',
+    languages: [
+      { name: 'Python', level: 'Good', score: '85%' },
+      { name: 'Node.js', level: 'Good', score: '85%' },
+      { name: 'JavaScript', level: 'Intermediate', score: '65%' },
+      { name: 'PHP', level: 'Basic', score: '30%' },
+      { name: 'Go', level: 'Basic', score: '25%' },
+    ],
+    frameworksAndDatabases: [
+      'Next.js', 'Prisma', 'Firebase', 'MySQL', 'PostgreSQL', 'SQLite'
+    ],
+    toolsAndSoftware: [
+      'VS Code', 'Postman', 'Playwright', 'Jira', 'SourceTree'
+    ]
+  },
+  redHat: {
+    title: 'Red Team',
+    subtitle: 'Offensive Security & Ethical Hacking',
+    languages: [
+      { name: 'Python', level: 'Good', score: '85%' },
+      { name: 'C++', level: 'Basic', score: '30%' },
+      { name: 'C#', level: 'Basic', score: '30%' },
+      { name: 'Assembly', level: 'Basic', score: '25%' },
+    ],
+    toolsAndSoftware: [
+      'Nmap', 'Burp Suite', 'Metasploit', 'Kali Linux', 'Wireshark',
+      'Ghidra', 'IDA Pro', 'GDB', 'BloodHound', 'LinPEAS',
+      'pspy', 'Nikto', 'VMware'
+    ]
+  }
+};
+
+export const CTF_SCORES_DATA = [
+  {
+    id: 'tctt-2025',
+    year: '2025',
+    title: 'Thailand Cyber Top Talent 2025 - SENIOR [Qualifier]',
+    badge: '2025 SENIOR',
+    url: 'https://cloud.ctf.in.th/score/view.html?t=BQU14LUPQ1',
+    individual: {
+      rank: '2',
+      player: 'pizzaloiopo',
+      team: 'RobloxGamerTH007',
+      score: '3,000'
+    },
+    team: {
+      rank: '33',
+      teamName: 'RobloxGamerTH007',
+      institution: 'มหาวิทยาลัยกรุงเทพ + มหาวิทยาลัยธรรมศาสตร์',
+      score: '3,001'
+    }
+  },
+  {
+    id: 'tctt-2024',
+    year: '2024',
+    title: 'Thailand Cyber Top Talent 2024 - SENIOR [Qualifier]',
+    badge: '2024 SENIOR',
+    url: 'https://cloud.ctf.in.th/score/view.html?t=QR66WITOOJ',
+    individual: {
+      rank: '141',
+      player: 'pizzaloiopo',
+      team: 'Tactical Sword',
+      score: '800'
+    },
+    team: {
+      rank: '60',
+      teamName: 'Tactical Sword',
+      institution: 'มหาลัยกรุงเทพ + มหาลัยธรรมศาสตร์',
+      score: '1,700'
+    }
+  },
+  {
+    id: 'tctt-2023',
+    year: '2023',
+    title: 'Thailand Cyber Top Talent 2023 - SENIOR [Qualifier]',
+    badge: '2023 SENIOR',
+    url: 'https://cloud.ctf.in.th/score/view.html?t=2HFLHQZCMI',
+    individual: {
+      rank: '79',
+      player: 'pizzaloiopo',
+      team: 'Tactical Sword',
+      score: '620'
+    },
+    team: {
+      rank: '23',
+      teamName: 'Tactical Sword',
+      institution: 'มหาวิทยาลัยกรุงเทพ',
+      score: '1,620'
+    }
+  }
+];

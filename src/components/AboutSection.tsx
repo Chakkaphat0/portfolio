@@ -33,7 +33,7 @@ export const AboutSection: React.FC = () => {
             isLight ? 'shadow-[0_0_30px_rgba(37,99,235,0.1)] border-blue-500/30' : 'shadow-[0_0_30px_rgba(0,255,102,0.15)] border-emerald-500/30'
           }`}>
             <AnimatedText
-              text="Driven by a high ambition for continuous learning and a deep passion for ethical hacking, hands-on security labs, and CTF challenges a personal dedication I have been practicing and honing since childhood."
+              text="I have been interested in cybersecurity and hacking since childhood, with an endless passion for discovering vulnerabilities and competing in CTF challenges."
               className={`text-base sm:text-lg md:text-xl font-mono text-center leading-relaxed tracking-wide ${
                 isLight ? 'text-slate-800' : 'text-slate-200'
               }`}
