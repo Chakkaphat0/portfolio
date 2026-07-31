@@ -217,7 +217,7 @@ export const SkillsSection: React.FC = () => {
                   <Code2 className="w-5 h-5" />
                 </div>
                 <div>
-                  <h3 className={`text-lg sm:text-xl font-black tracking-tight ${isLight ? 'text-slate-900' : 'text-white'}`}>
+                  <h3 className={`text-lg sm:text-xl font-black tracking-tight ${isLight ? 'text-blue-600 font-bold' : 'text-white'}`}>
                     {developer.title}
                   </h3>
                   <p className={`text-[11px] sm:text-xs font-mono ${isLight ? 'text-blue-600' : 'text-emerald-400'}`}>
@@ -297,7 +297,7 @@ export const SkillsSection: React.FC = () => {
               transition={{ duration: 0.3 }}
               className={`glass-card-matrix p-5 sm:p-8 rounded-3xl border space-y-6 sm:space-y-8 transition-all duration-300 ${
                 isLight
-                  ? 'border-blue-500/30 shadow-[0_0_30px_rgba(37,99,235,0.12)]'
+                  ? 'border-rose-500/30 shadow-[0_0_30px_rgba(244,63,94,0.12)]'
                   : 'border-emerald-500/35 shadow-[0_0_35px_rgba(0,255,102,0.18)]'
               }`}
             >
@@ -311,7 +311,7 @@ export const SkillsSection: React.FC = () => {
                   <SiRedhat className="w-6 h-6 text-rose-500" />
                 </div>
                 <div>
-                  <h3 className={`text-xl sm:text-2xl font-black tracking-tight ${isLight ? 'text-slate-900' : 'text-white'}`}>
+                  <h3 className={`text-xl sm:text-2xl font-black tracking-tight ${isLight ? 'text-rose-600 font-bold' : 'text-white'}`}>
                     {redHat.title}
                   </h3>
                   <p className={`text-xs font-mono ${isLight ? 'text-rose-600' : 'text-rose-400'}`}>
