@@ -1,15 +1,9 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Trophy, Users, Presentation, Calendar, MapPin, ZoomIn, X } from 'lucide-react';
+import { Calendar, MapPin, ZoomIn, X } from 'lucide-react';
 import { ACTIVITIES_DATA } from '../data/portfolioData';
 import { FadeIn } from './ui/FadeIn';
 import { useTheme } from '../context/ThemeContext';
-
-const categoryIcons: Record<string, React.ReactNode> = {
-  Competition: <Trophy className="w-4 h-4 text-emerald-400" />,
-  Club: <Users className="w-4 h-4 text-cyan-400" />,
-  Conference: <Presentation className="w-4 h-4 text-indigo-400" />,
-};
 
 interface LightboxState {
   isOpen: boolean;
@@ -65,16 +59,6 @@ export const ActivitiesSection: React.FC = () => {
                     loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
-                  
-                  {/* Category Pill */}
-                  <div className={`absolute top-4 left-4 flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-bold border backdrop-blur-md ${
-                    isLight
-                      ? 'bg-white/90 text-slate-900 border-blue-200 shadow-sm'
-                      : 'bg-black/80 text-white border-emerald-500/40 shadow-[0_0_10px_rgba(0,255,102,0.2)]'
-                  }`}>
-                    {categoryIcons[act.category]}
-                    <span>{act.category}</span>
-                  </div>
 
                   {/* Date Pill */}
                   <div className="absolute bottom-4 left-4 flex items-center gap-1.5 text-xs text-slate-200 font-mono font-semibold">

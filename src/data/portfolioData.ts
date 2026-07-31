@@ -132,7 +132,7 @@ export const ACTIVITIES_DATA: Activity[] = [
     title: 'Meet The Youth Cyber Guardians Thailand 2025',
     category: 'Club',
     date: '07 September 2025',
-    role: 'Audience Participant',
+    role: 'Participant',
     organization: 'Royal Thai Armed Forces Cyber Command & NCSA',
     description: 'Joined the national youth cybersecurity initiative hosted by the Royal Thai Armed Forces Cyber Command in collaboration with NCSA. Engaged in hands-on Red Team vs Blue Team cyber simulations, Threat Intelligence (ISR), OSINT investigations, and national security defense workshops.',
     image: './Event/Meet The Youth Cyber Guardians Thailand 2025 7 กันยายน พศ 2568.jpg',
