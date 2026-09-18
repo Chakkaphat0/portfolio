@@ -153,6 +153,19 @@ export const ACTIVITIES_DATA: Activity[] = [
 
 export const CERTIFICATES_DATA: Certificate[] = [
   {
+    id: 'cert-tctt-2026',
+    title: 'Thailand Cyber Top Talent 2026 (TCTT 2026)',
+    issuer: 'National Cyber Security Agency (NCSA)',
+    issueDate: '15 August 2026',
+    year: '2026',
+    category: 'Competition',
+    thumbnail: './certificates/tctt2026.png',
+    teamName: 'Cybr Hero Acdmia',
+    username: 'pizzaloiopo',
+    tags: ['Cybersecurity', 'CTF', 'TCTT 2026', 'National Competition'],
+    description: 'Certificate of participation in the national Thailand Cyber Top Talent 2026 cybersecurity competition, representing team Cybr Hero Acdmia.'
+  },
+  {
     id: 'cert-1',
     title: 'Thailand Cyber Top Talent 2025 (TCTT 2025)',
     issuer: 'National Cyber Security Agency (NCSA)',
@@ -317,6 +330,25 @@ export const TECHNICAL_SKILLS_DATA = {
 };
 
 export const CTF_SCORES_DATA = [
+  {
+    id: 'tctt-2026-finalist',
+    year: '2026',
+    title: 'Thailand Cyber Top Talent 2026 - SENIOR [Finalist]',
+    badge: '2026 SENIOR FINALIST',
+    url: 'https://www.youtube.com/watch?v=rWdGRZcILB8',
+    individual: {
+      rank: '',
+      player: 'pizzaloiopo',
+      team: 'Cybr Hero Acdmia',
+      firstBloods: '6'
+    },
+    team: {
+      placement: 'Winner',
+      teamName: 'Cybr Hero Acdmia',
+      institution: 'มหาวิทยาลัยกรุงเทพ + วิทยาลัยนานาชาติ มหาวิทยาลัยมหิดล + มหาวิทยาลัยสุโขทัยธรรมาธิราช',
+      score: '14,793'
+    }
+  },
   {
     id: 'tctt-2025',
     year: '2025',

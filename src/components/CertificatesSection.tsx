@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Award, Calendar, ExternalLink, ShieldCheck, X, Users, UserCheck } from 'lucide-react';
 import { CERTIFICATES_DATA } from '../data/portfolioData';
 import { Certificate } from '../types/portfolio';
@@ -17,19 +17,36 @@ export const CertificatesSection: React.FC = () => {
     ? CERTIFICATES_DATA
     : CERTIFICATES_DATA.filter((cert) => cert.year === selectedYear);
 
+  useEffect(() => {
+    if (!selectedCert) return;
+
+    const previousOverflow = document.body.style.overflow;
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setSelectedCert(null);
+    };
+
+    document.body.style.overflow = 'hidden';
+    window.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [selectedCert]);
+
   return (
-    <section id="certificates" className={`py-24 sm:py-32 relative overflow-hidden transition-colors duration-300 ${
+    <section id="certificates" className={`relative overflow-hidden py-16 transition-colors duration-300 sm:py-24 ${
       isLight ? 'bg-transparent text-slate-900 border-t border-blue-200/40' : 'bg-transparent text-white border-t border-emerald-900/40'
     }`}>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <FadeIn delay={0}>
-          <div className="text-center mb-12">
-            <h2 className="hero-heading-green font-black uppercase tracking-tight text-4xl sm:text-5xl md:text-6xl">
+          <div className="mb-8 text-center sm:mb-12">
+            <h2 className="hero-heading-green text-3xl font-black uppercase tracking-tight sm:text-5xl md:text-6xl">
               Certificates
             </h2>
-            <p className={`mt-2 text-xs font-mono font-bold uppercase tracking-widest ${
+            <p className={`mx-auto mt-2 max-w-2xl text-sm font-mono font-bold uppercase leading-relaxed tracking-wider ${
               isLight ? 'text-blue-600' : 'text-emerald-400'
             }`}>
               Certifications in Cybersecurity Competitions, Trainings, and Technical Standards
@@ -39,12 +56,12 @@ export const CertificatesSection: React.FC = () => {
 
         {/* Year Filter Buttons (2023 - 2026) */}
         <FadeIn delay={0.1}>
-          <div className="flex flex-wrap items-center justify-center gap-2 mb-12">
+          <div className="mobile-scrollbar-hide -mx-4 mb-8 flex snap-x items-center gap-2 overflow-x-auto px-4 pb-2 sm:mx-0 sm:mb-12 sm:flex-wrap sm:justify-center sm:overflow-visible sm:px-0">
             {years.map((year) => (
               <button
                 key={year}
                 onClick={() => setSelectedYear(year)}
-                className={`px-5 py-2 rounded-full text-xs font-mono font-bold uppercase tracking-wider transition-all duration-300 ${
+                className={`min-h-11 shrink-0 snap-start rounded-full px-5 py-2 text-sm font-mono font-bold uppercase tracking-wider transition-all duration-300 ${
                   selectedYear === year
                     ? isLight
                       ? 'bg-blue-600 text-white shadow-[0_0_20px_rgba(37,99,235,0.4)] border border-blue-500'
@@ -61,11 +78,11 @@ export const CertificatesSection: React.FC = () => {
         </FadeIn>
 
         {/* Certificates Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3 lg:gap-8">
           {filteredCertificates.map((cert, idx) => (
             <FadeIn key={cert.id} delay={idx * 0.08}>
               <div
-                className={`group h-full glass-card-matrix rounded-3xl p-5 shadow-xs transition-all flex flex-col justify-between ${
+                className={`group flex h-full flex-col justify-between rounded-3xl p-4 shadow-xs transition-all glass-card-matrix sm:p-5 ${
                   isLight
                     ? 'border-blue-500/30 hover:border-blue-600/60 hover:shadow-[0_0_30px_rgba(37,99,235,0.15)]'
                     : 'border-emerald-500/30 hover:border-emerald-400/60 hover:shadow-[0_0_30px_rgba(0,255,102,0.2)]'
@@ -75,7 +92,7 @@ export const CertificatesSection: React.FC = () => {
                   {/* Thumbnail Image Frame */}
                   <div
                     onClick={() => setSelectedCert(cert)}
-                    className={`relative h-48 overflow-hidden rounded-2xl border mb-4 cursor-pointer ${
+                    className={`relative mb-4 h-44 cursor-pointer overflow-hidden rounded-2xl border sm:h-48 ${
                       isLight ? 'border-blue-100 bg-slate-100' : 'border-emerald-900/50 bg-black'
                     }`}
                   >
@@ -100,7 +117,7 @@ export const CertificatesSection: React.FC = () => {
                       {cert.issuer}
                     </span>
 
-                    <h3 className={`text-base font-bold transition-colors line-clamp-2 ${
+                    <h3 className={`line-clamp-2 text-lg font-bold leading-snug transition-colors ${
                       isLight ? 'text-slate-900 group-hover:text-blue-600' : 'text-white group-hover:text-emerald-300'
                     }`}>
                       {cert.title}
@@ -120,7 +137,7 @@ export const CertificatesSection: React.FC = () => {
                 <div className={`pt-4 mt-4 border-t ${isLight ? 'border-blue-100' : 'border-emerald-900/40'}`}>
                   <button
                     onClick={() => setSelectedCert(cert)}
-                    className={`w-full py-2.5 rounded-xl font-mono font-bold text-xs transition-all duration-300 flex items-center justify-center border ${
+                    className={`flex min-h-11 w-full items-center justify-center rounded-xl border py-2.5 font-mono text-sm font-bold transition-all duration-300 ${
                       isLight
                         ? 'bg-white border-blue-400 text-blue-600 hover:bg-blue-600 hover:text-white shadow-[0_0_15px_rgba(37,99,235,0.1)]'
                         : 'bg-black border-emerald-500/40 text-emerald-400 hover:bg-emerald-500 hover:text-black shadow-[0_0_15px_rgba(0,255,102,0.15)]'
@@ -139,10 +156,18 @@ export const CertificatesSection: React.FC = () => {
 
       {/* Detail & Lightbox Preview Modal */}
       {selectedCert && (
-        <div className={`fixed inset-0 z-50 p-4 sm:p-8 flex items-center justify-center overflow-y-auto ${
+        <div
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="certificate-modal-title"
+          onClick={() => setSelectedCert(null)}
+          className={`fixed inset-0 z-50 flex items-end justify-center overflow-y-auto p-0 sm:items-center sm:p-8 ${
           isLight ? 'bg-slate-900/60 backdrop-blur-md' : 'bg-black/90 backdrop-blur-md'
-        }`}>
-          <div className={`relative max-w-3xl w-full rounded-3xl border overflow-hidden p-5 sm:p-7 flex flex-col space-y-5 my-auto transition-all duration-300 ${
+        }`}
+        >
+          <div
+            onClick={(event) => event.stopPropagation()}
+            className={`relative flex max-h-[92dvh] w-full max-w-3xl flex-col space-y-4 overflow-y-auto rounded-t-3xl border p-4 transition-all duration-300 sm:my-auto sm:space-y-5 sm:rounded-3xl sm:p-7 ${
             isLight
               ? 'bg-white border-blue-500/50 text-slate-900 shadow-[0_0_50px_rgba(37,99,235,0.25)]'
               : 'bg-black border-emerald-500/50 text-white shadow-[0_0_50px_rgba(0,255,102,0.3)]'
@@ -158,7 +183,7 @@ export const CertificatesSection: React.FC = () => {
                 }`}>
                   {selectedCert.issuer}
                 </span>
-                <h3 className={`text-lg sm:text-2xl font-black ${isLight ? 'text-slate-900' : 'text-white'}`}>
+                <h3 id="certificate-modal-title" className={`text-xl sm:text-2xl font-black leading-tight ${isLight ? 'text-slate-900' : 'text-white'}`}>
                   {selectedCert.title}
                 </h3>
                 <div className={`flex items-center gap-1.5 text-xs font-mono font-medium pt-0.5 ${
@@ -170,7 +195,7 @@ export const CertificatesSection: React.FC = () => {
               </div>
               <button
                 onClick={() => setSelectedCert(null)}
-                className={`p-2 rounded-full border transition-colors shrink-0 ${
+                className={`flex min-h-11 min-w-11 shrink-0 items-center justify-center rounded-full border p-2 transition-colors ${
                   isLight
                     ? 'bg-slate-100 text-blue-600 hover:bg-blue-100 border-blue-300'
                     : 'bg-black text-emerald-400 hover:bg-emerald-950 border-emerald-500/40'
@@ -182,13 +207,13 @@ export const CertificatesSection: React.FC = () => {
             </div>
 
             {/* High-res Image Preview */}
-            <div className={`max-h-[50vh] overflow-hidden rounded-2xl border flex justify-center items-center p-2 ${
+            <div className={`flex max-h-[38dvh] items-center justify-center overflow-hidden rounded-2xl border p-2 sm:max-h-[50vh] ${
               isLight ? 'bg-slate-50 border-blue-200' : 'bg-black border-emerald-900/40'
             }`}>
               <img
                 src={selectedCert.thumbnail}
                 alt={selectedCert.title}
-                className="max-h-[45vh] w-auto object-contain rounded-xl shadow-lg"
+                className="max-h-[34dvh] w-auto rounded-xl object-contain shadow-lg sm:max-h-[45vh]"
               />
             </div>
 
@@ -253,7 +278,7 @@ export const CertificatesSection: React.FC = () => {
 
               <button
                 onClick={() => setSelectedCert(null)}
-                className={`px-5 py-2 rounded-full font-bold text-xs transition-colors ml-auto ${
+                className={`ml-auto min-h-11 rounded-full px-5 py-2 text-sm font-bold transition-colors ${
                   isLight
                     ? 'bg-blue-600 text-white hover:bg-blue-700'
                     : 'bg-emerald-500 text-black hover:bg-emerald-400'

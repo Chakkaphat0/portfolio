@@ -6,6 +6,16 @@
   html {
     font-family: 'Kanit', sans-serif;
     scroll-behavior: smooth;
+    scroll-padding-top: 5.5rem;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    min-width: 320px;
+  }
+
+  section[id] {
+    scroll-margin-top: 5.5rem;
   }
 
   /* Default Dark Mode (Pure Black & Neon Matrix Green) */
@@ -22,6 +32,28 @@
   body.light {
     background-color: #F8FAFC;
     color: #0F172A;
+  }
+}
+
+.mobile-scrollbar-hide {
+  scrollbar-width: none;
+}
+
+.mobile-scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
 

@@ -34,11 +34,33 @@ export const Navbar: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    if (!mobileMenuOpen) return;
+
+    const previousOverflow = document.body.style.overflow;
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setMobileMenuOpen(false);
+    };
+    const closeOnDesktop = () => {
+      if (window.innerWidth >= 768) setMobileMenuOpen(false);
+    };
+
+    document.body.style.overflow = 'hidden';
+    window.addEventListener('keydown', closeOnEscape);
+    window.addEventListener('resize', closeOnDesktop);
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener('keydown', closeOnEscape);
+      window.removeEventListener('resize', closeOnDesktop);
+    };
+  }, [mobileMenuOpen]);
+
   const isLight = theme === 'light';
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed left-0 right-0 top-0 z-50 transition-all duration-300 ${
         isScrolled
           ? 'glass-nav-matrix py-3.5 shadow-md border-b'
           : 'bg-transparent py-5'
@@ -136,7 +158,7 @@ export const Navbar: React.FC = () => {
           <div className="md:hidden flex items-center gap-2">
             <button
               onClick={toggleTheme}
-              className={`p-2 rounded-lg border transition-colors ${
+              className={`flex min-h-11 min-w-11 items-center justify-center rounded-xl border p-2 transition-colors ${
                 isLight
                   ? 'bg-white text-blue-600 border-blue-500/40'
                   : 'bg-black text-amber-400 border-emerald-500/40'
@@ -148,7 +170,7 @@ export const Navbar: React.FC = () => {
 
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className={`p-2 rounded-lg border focus:outline-none ${
+              className={`flex min-h-11 min-w-11 items-center justify-center rounded-xl border p-2 focus:outline-none ${
                 isLight
                   ? 'bg-white text-blue-600 border-blue-500/40'
                   : 'bg-black text-emerald-400 border-emerald-500/40'
@@ -165,23 +187,28 @@ export const Navbar: React.FC = () => {
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            className={`md:hidden backdrop-blur-md border-b overflow-hidden ${
+            initial={{ opacity: 0, y: -12 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -12 }}
+            transition={{ duration: 0.2 }}
+            className={`max-h-[calc(100dvh-76px)] overflow-y-auto border-b backdrop-blur-md md:hidden ${
               isLight ? 'bg-white/95 border-blue-200' : 'bg-black/95 border-emerald-900/50'
             }`}
           >
-            <div className="px-6 py-6 space-y-2">
+            <nav aria-label="Mobile navigation" className="space-y-1.5 px-4 pb-[max(1.5rem,env(safe-area-inset-bottom))] pt-4 sm:px-6">
               {NAV_ITEMS.map((item) => (
                 <a
                   key={item.href}
                   href={item.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className={`block px-4 py-2 rounded-lg text-sm font-mono font-medium transition-colors ${
-                    isLight
-                      ? 'text-slate-700 hover:bg-blue-50 hover:text-blue-600'
-                      : 'text-slate-300 hover:bg-emerald-950/50 hover:text-emerald-400'
+                  className={`flex min-h-11 items-center rounded-xl px-4 py-2 text-base font-mono font-semibold transition-colors ${
+                    activeSection === item.href.substring(1)
+                      ? isLight
+                        ? 'bg-blue-100 text-blue-700'
+                        : 'bg-emerald-950 text-emerald-300'
+                      : isLight
+                        ? 'text-slate-700 hover:bg-blue-50 hover:text-blue-600'
+                        : 'text-slate-300 hover:bg-emerald-950/50 hover:text-emerald-400'
                   }`}
                 >
                   {item.label}
@@ -191,14 +218,14 @@ export const Navbar: React.FC = () => {
                 <a
                   href="#contact"
                   onClick={() => setMobileMenuOpen(false)}
-                  className={`block w-full py-2.5 text-center rounded-lg text-xs font-mono font-bold ${
+                  className={`flex min-h-12 w-full items-center justify-center rounded-xl py-2.5 text-center text-sm font-mono font-bold ${
                     isLight ? 'bg-blue-600 text-white' : 'bg-emerald-500 text-black'
                   }`}
                 >
                   Contact Me
                 </a>
               </div>
-            </div>
+            </nav>
           </motion.div>
         )}
       </AnimatePresence>
