@@ -154,16 +154,16 @@ export const ACTIVITIES_DATA: Activity[] = [
 export const CERTIFICATES_DATA: Certificate[] = [
   {
     id: 'cert-tctt-2026',
-    title: 'Thailand Cyber Top Talent 2026 (TCTT 2026)',
+    title: 'Thailand Cyber Top Talent 2026 (TCTT 2026) — Winner',
     issuer: 'National Cyber Security Agency (NCSA)',
-    issueDate: '15 August 2026',
+    issueDate: '5 September 2026',
     year: '2026',
     category: 'Competition',
-    thumbnail: './certificates/tctt2026.png',
+    thumbnail: './certificates/tctt2026-winner.png',
     teamName: 'Cybr Hero Acdmia',
     username: 'pizzaloiopo',
-    tags: ['Cybersecurity', 'CTF', 'TCTT 2026', 'National Competition'],
-    description: 'Certificate of participation in the national Thailand Cyber Top Talent 2026 cybersecurity competition, representing team Cybr Hero Acdmia.'
+    tags: ['Cybersecurity', 'CTF', 'TCTT 2026', 'National Competition', 'Winner'],
+    description: 'Winner certificate for the Thailand Cyber Top Talent 2026 cybersecurity competition, representing team Cybr Hero Acdmia.'
   },
   {
     id: 'cert-1',
@@ -340,7 +340,7 @@ export const CTF_SCORES_DATA = [
       rank: '',
       player: 'pizzaloiopo',
       team: 'Cybr Hero Acdmia',
-      firstBloods: '6'
+      score: '5,087'
     },
     team: {
       placement: 'Winner',

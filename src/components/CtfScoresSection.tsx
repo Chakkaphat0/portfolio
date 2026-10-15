@@ -38,7 +38,7 @@ export const CtfScoresSection: React.FC = () => {
           }`}>
 
             {/* Window Sub-Header */}
-            <div className={`flex items-center justify-between gap-3 border-b pb-2.5 ${
+            <div className={`flex flex-wrap items-center justify-between gap-3 border-b pb-2.5 ${
               isLight ? 'border-slate-200' : 'border-slate-700/40'
             }`}>
               <span className={`whitespace-nowrap text-xs font-mono font-black uppercase tracking-wider ${isLight ? 'text-blue-950' : 'text-white'}`}>
@@ -117,15 +117,9 @@ export const CtfScoresSection: React.FC = () => {
                       </div>
                       <div className="flex items-center gap-1.5 sm:ml-auto">
                         <span className={`text-xs uppercase font-bold ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>Individual:</span>
-                        {record.individual.firstBloods ? (
-                          <span className={`text-xs font-black ${isLight ? 'text-rose-700' : 'text-rose-300'}`}>
-                            {record.individual.firstBloods} First Bloods
-                          </span>
-                        ) : (
-                          <span className={`text-sm font-black ${isLight ? 'text-blue-700' : 'text-emerald-400'}`}>
-                            {record.individual.score} <span className="text-xs font-normal">pts</span>
-                          </span>
-                        )}
+                        <span className={`text-sm font-black ${isLight ? 'text-blue-700' : 'text-emerald-400'}`}>
+                          {record.individual.score} <span className="text-xs font-normal">pts</span>
+                        </span>
                       </div>
                     </div>
                   )}
