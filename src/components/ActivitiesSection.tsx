@@ -32,13 +32,13 @@ export const ActivitiesSection: React.FC = () => {
               Activities & Contributions
             </h2>
             <p className={`mt-2 font-mono text-xs sm:text-sm ${isLight ? 'text-slate-600' : 'text-slate-400'}`}>
-              Hackathons, Tech Clubs, and Professional Seminars
+              Cybersecurity Competitions, Hackathons, and Community Activities
             </p>
           </div>
         </FadeIn>
 
         {/* Activities Card Gallery Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {ACTIVITIES_DATA.map((act, idx) => (
             <FadeIn key={act.id} delay={idx * 0.15}>
               <div className={`group h-full rounded-3xl glass-card-matrix border overflow-hidden transition-all duration-300 flex flex-col justify-between ${
@@ -55,7 +55,7 @@ export const ActivitiesSection: React.FC = () => {
                   <img
                     src={act.image}
                     alt={act.title}
-                    className="w-full h-full object-cover group-hover/img:scale-108 transition-transform duration-500"
+                    className={`w-full h-full transition-transform duration-500 ${act.category === 'Bootcamp' ? 'object-contain bg-black' : 'object-cover group-hover/img:scale-108'}`}
                     loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
@@ -89,6 +89,12 @@ export const ActivitiesSection: React.FC = () => {
                     } transition-colors`}>
                       {act.title}
                     </h3>
+
+                    {act.status && (
+                      <span className={'inline-flex rounded-full border px-2.5 py-1 text-[11px] font-bold ' + (isLight ? 'bg-amber-50 text-amber-800 border-amber-200' : 'bg-amber-500/10 text-amber-300 border-amber-500/30')}>
+                        {act.status}
+                      </span>
+                    )}
 
                     {/* Role / Position */}
                     <div className="text-xs font-bold">

@@ -43,7 +43,8 @@ export interface TimelineItem {
 export interface Activity {
   id: string;
   title: string;
-  category: 'Competition' | 'Club' | 'Conference';
+  category: 'Competition' | 'Club' | 'Conference' | 'Bootcamp';
+  status?: string;
   date: string;
   role: string;
   organization: string;
@@ -67,4 +68,16 @@ export interface Certificate {
   category?: 'Competition' | 'Course' | 'Workshop' | 'Achievement';
   rank?: string;
   scoreUrl?: string;
+}
+
+export interface CtfRecord {
+  id: string;
+  year: string;
+  title: string;
+  badge: string;
+  url?: string;
+  achievement?: string;
+  description?: string;
+  individual?: { rank: string; player: string; team: string; score: string };
+  team?: { rank?: string; placement?: string; teamName: string; institution: string; score: string };
 }

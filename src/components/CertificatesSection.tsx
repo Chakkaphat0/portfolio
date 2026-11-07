@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Award, Calendar, ExternalLink, ShieldCheck, X, Users, UserCheck } from 'lucide-react';
+import { Award, Calendar, ExternalLink, X, Users, UserCheck } from 'lucide-react';
 import { CERTIFICATES_DATA } from '../data/portfolioData';
 import { Certificate } from '../types/portfolio';
 import { FadeIn } from './ui/FadeIn';
@@ -225,7 +225,6 @@ export const CertificatesSection: React.FC = () => {
                 <div className={`flex items-center gap-2 font-bold text-xs uppercase tracking-wider ${
                   isLight ? 'text-blue-600' : 'text-emerald-400'
                 }`}>
-                  <ShieldCheck className="w-4 h-4" />
                   <span>Overview</span>
                 </div>
                 <p className={`leading-relaxed font-sans text-sm pt-1 ${

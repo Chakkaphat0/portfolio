@@ -1,4 +1,4 @@
-import { NavItem, Project, TimelineItem, Activity, Certificate } from '../types/portfolio';
+import { NavItem, Project, TimelineItem, Activity, Certificate, CtfRecord } from '../types/portfolio';
 
 export const NAV_ITEMS: NavItem[] = [
   { label: 'Home', href: '#home' },
@@ -117,6 +117,28 @@ export const PROJECTS_DATA: Project[] = [
 
 export const ACTIVITIES_DATA: Activity[] = [
   {
+    id: 'act-gcc-bootcamp-2027',
+    title: 'GCC Bootcamp 2027',
+    category: 'Bootcamp',
+    date: '2027',
+    status: 'Selected · Upcoming',
+    role: 'Selected Participant',
+    organization: 'STDiO CTF / 2600 Thailand',
+    description: 'Selected through STDiO CTF 2026 to participate in the GCC Bootcamp 2027. The bootcamp is scheduled for 2027 and has not yet started.',
+    image: './Event/stdio-gcc-selection.jpg'
+  },
+  {
+    id: 'act-ajccbc-2026',
+    title: 'AJCCBC Cyber SEA Game 2026',
+    category: 'Competition',
+    date: '27 October 2026',
+    role: 'Thailand Representative',
+    organization: 'ASEAN-Japan Cybersecurity Capacity Building Centre (AJCCBC)',
+    description: 'Represented Thailand at Cyber SEA Game 2026, a regional cybersecurity competition bringing together teams from across ASEAN. Applied CTF problem-solving skills and teamwork while exchanging experience with fellow cybersecurity competitors.',
+    image: './Event/AJCCBC.jpg',
+    achievement: 'Thailand Representative'
+  },
+  {
     id: 'act-1',
     title: 'BU-ITI CTF COMPETITION 2025',
     category: 'Competition',
@@ -152,6 +174,17 @@ export const ACTIVITIES_DATA: Activity[] = [
 ];
 
 export const CERTIFICATES_DATA: Certificate[] = [
+  {
+    id: 'cert-stdio-2026',
+    title: 'STDiO CTF 2026 — Finalist',
+    issuer: '2600 Thailand',
+    issueDate: '10 October 2026',
+    year: '2026',
+    category: 'Competition',
+    thumbnail: './certificates/stdio-2026.png',
+    tags: ['Cybersecurity', 'CTF', 'STDiO 2026', 'Finalist'],
+    description: 'Recognized as a finalist in the final round of STDiO CTF 2026, organized by 2600 Thailand.'
+  },
   {
     id: 'cert-tctt-2026',
     title: 'Thailand Cyber Top Talent 2026 (TCTT 2026) — Winner',
@@ -298,13 +331,6 @@ export const TECHNICAL_SKILLS_DATA = {
   developer: {
     title: 'Developer',
     subtitle: 'Software Development & Web Technologies',
-    languages: [
-      { name: 'Python', level: 'Good', score: '85%' },
-      { name: 'Node.js', level: 'Good', score: '85%' },
-      { name: 'JavaScript', level: 'Intermediate', score: '65%' },
-      { name: 'PHP', level: 'Basic', score: '30%' },
-      { name: 'Go', level: 'Basic', score: '25%' },
-    ],
     frameworksAndDatabases: [
       'Next.js', 'Prisma', 'Firebase', 'MySQL', 'PostgreSQL', 'SQLite'
     ],
@@ -315,21 +341,31 @@ export const TECHNICAL_SKILLS_DATA = {
   redHat: {
     title: 'Red Team',
     subtitle: 'Offensive Security & Ethical Hacking',
-    languages: [
-      { name: 'Python', level: 'Good', score: '85%' },
-      { name: 'C++', level: 'Basic', score: '30%' },
-      { name: 'C#', level: 'Basic', score: '30%' },
-      { name: 'Assembly', level: 'Basic', score: '25%' },
-    ],
     toolsAndSoftware: [
       'Nmap', 'Burp Suite', 'Metasploit', 'Kali Linux', 'Wireshark',
-      'Ghidra', 'IDA Pro', 'GDB', 'BloodHound', 'LinPEAS',
+      'Ghidra', 'GDB', 'BloodHound', 'LinPEAS',
       'pspy', 'Nikto', 'VMware'
     ]
   }
 };
 
-export const CTF_SCORES_DATA = [
+export const CTF_SCORES_DATA: CtfRecord[] = [
+  {
+    id: 'ajccbc-cyber-sea-game-2026',
+    year: '2026',
+    title: 'AJCCBC Cyber SEA Game 2026 - International Competition',
+    badge: 'Thailand Representative',
+    achievement: 'Thailand Representative',
+    description: 'Represented Thailand in the regional cybersecurity competition organized by AJCCBC.'
+  },
+  {
+    id: 'stdio-2026',
+    year: '2026',
+    title: 'STDiO CTF 2026 - 2600 Thailand',
+    badge: '1st Place',
+    achievement: '1st Place',
+    description: 'First place in STDiO CTF 2026, organized by 2600 Thailand.'
+  },
   {
     id: 'tctt-2026-finalist',
     year: '2026',

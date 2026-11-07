@@ -2,10 +2,9 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   Code2, Terminal, Database, Wrench,
-  Cpu, Radar, Shield, Binary, Key, Activity, Globe, Share2, Play
+  Radar, Shield, Key, Activity, Globe, Share2, Play
 } from 'lucide-react';
 import {
-  SiPython, SiNodedotjs, SiJavascript, SiPhp, SiGo, SiCplusplus, SiSharp,
   SiNextdotjs, SiPrisma, SiFirebase, SiMysql, SiPostgresql, SiSqlite,
   SiPostman, SiJira, SiSourcetree,
   SiBurpsuite, SiMetasploit, SiKalilinux, SiWireshark, SiVmware, SiRedhat
@@ -14,6 +13,9 @@ import { VscVscode } from 'react-icons/vsc';
 import { TECHNICAL_SKILLS_DATA } from '../data/portfolioData';
 import { FadeIn } from './ui/FadeIn';
 import { useTheme } from '../context/ThemeContext';
+
+// Set to true when the Developer skills section is ready to show again.
+const SHOW_DEVELOPER_SKILLS = false;
 
 interface MarqueeTickerProps {
   items: string[];
@@ -66,10 +68,21 @@ const MarqueeTicker: React.FC<MarqueeTickerProps> = ({ items, renderIcon, isLigh
   );
 };
 
+const ToolList: React.FC<Pick<MarqueeTickerProps, 'items' | 'renderIcon' | 'isLight'>> = ({ items, renderIcon, isLight }) => (
+  <ul className="flex flex-wrap gap-2.5" aria-label="Tools & Software">
+    {items.map(item => (
+      <li key={item} className={'group flex items-center gap-2 rounded-xl border px-3 py-2.5 text-sm font-mono font-bold ' + (isLight ? 'bg-white text-slate-800 border-slate-200' : 'bg-black/60 text-slate-100 border-emerald-500/30')}>
+        {renderIcon(item)}
+        <span>{item}</span>
+      </li>
+    ))}
+  </ul>
+);
+
 export const SkillsSection: React.FC = () => {
   const { theme } = useTheme();
   const isLight = theme === 'light';
-  const [activeTab, setActiveTab] = useState<'developer' | 'redHat'>('developer');
+  const [activeTab, setActiveTab] = useState<'developer' | 'redHat'>('redHat');
 
   const { developer, redHat } = TECHNICAL_SKILLS_DATA;
 
@@ -80,14 +93,6 @@ export const SkillsSection: React.FC = () => {
       : "w-5 h-5 shrink-0 transition-transform group-hover:scale-110";
 
     switch (name) {
-      case 'Python': return <SiPython className={`${iconClass} text-[#3776AB]`} />;
-      case 'Node.js': return <SiNodedotjs className={`${iconClass} text-[#5FA04E]`} />;
-      case 'JavaScript': return <SiJavascript className={`${iconClass} text-[#F7DF1E]`} />;
-      case 'PHP': return <SiPhp className={`${iconClass} text-[#777BB4]`} />;
-      case 'Go': return <SiGo className={`${iconClass} text-[#00ADD8]`} />;
-      case 'C++': return <SiCplusplus className={`${iconClass} text-[#00599C]`} />;
-      case 'C#': return <SiSharp className={`${iconClass} text-[#239120]`} />;
-      case 'Assembly': return <Cpu className={`${iconClass} text-amber-500`} />;
       case 'Next.js': return <SiNextdotjs className={`${iconClass} ${isLight ? 'text-black' : 'text-white'}`} />;
       case 'Prisma': return <SiPrisma className={`${iconClass} ${isLight ? 'text-slate-800' : 'text-white'}`} />;
       case 'Firebase': return <SiFirebase className={`${iconClass} text-[#FFCA28]`} />;
@@ -105,7 +110,6 @@ export const SkillsSection: React.FC = () => {
       case 'Kali Linux': return <SiKalilinux className={`${iconClass} text-[#557C93]`} />;
       case 'Wireshark': return <SiWireshark className={`${iconClass} text-[#1679A7]`} />;
       case 'Ghidra': return <Shield className={`${iconClass} text-rose-500`} />;
-      case 'IDA Pro': return <Binary className={`${iconClass} text-purple-400`} />;
       case 'GDB': return <Terminal className={`${iconClass} text-emerald-400`} />;
       case 'BloodHound': return <Share2 className={`${iconClass} text-red-500`} />;
       case 'LinPEAS': return <Key className={`${iconClass} text-amber-400`} />;
@@ -116,22 +120,6 @@ export const SkillsSection: React.FC = () => {
     }
   };
 
-  const getBadgeStyle = (level: string) => {
-    if (level === 'Good') {
-      return isLight
-        ? 'bg-emerald-100 text-emerald-800 border-emerald-300'
-        : 'bg-emerald-950/80 text-emerald-300 border-emerald-500/50 shadow-[0_0_10px_rgba(0,255,102,0.25)]';
-    }
-    if (level === 'Intermediate') {
-      return isLight
-        ? 'bg-blue-100 text-blue-800 border-blue-300'
-        : 'bg-blue-950/80 text-cyan-300 border-cyan-500/50 shadow-[0_0_10px_rgba(6,182,212,0.25)]';
-    }
-    // Basic
-    return isLight
-      ? 'bg-slate-100 text-slate-700 border-slate-300'
-      : 'bg-zinc-900 text-slate-400 border-slate-700';
-  };
 
   return (
     <section
@@ -149,12 +137,12 @@ export const SkillsSection: React.FC = () => {
               Technical Skills
             </h2>
             <p className={`mt-1.5 font-mono text-xs sm:text-sm ${isLight ? 'text-slate-600' : 'text-slate-400'}`}>
-              Categorized into Developer and Red Team Offensive Security
+              {SHOW_DEVELOPER_SKILLS ? 'Red Team Offensive Security & Software Development' : 'Red Team Offensive Security'}
             </p>
           </div>
         </FadeIn>
 
-        {/* Single Toggle Button (Click same button to switch between Developer and Red Team) */}
+        {SHOW_DEVELOPER_SKILLS && (
         <FadeIn delay={0.1}>
           <div className="flex justify-center items-center mb-6">
             <motion.button
@@ -162,7 +150,7 @@ export const SkillsSection: React.FC = () => {
               whileHover={{ scale: 1.08 }}
               onClick={() => setActiveTab(prev => prev === 'developer' ? 'redHat' : 'developer')}
               title={activeTab === 'developer' ? 'Switch to Red Team' : 'Switch to Developer'}
-              aria-label="Toggle Category"
+              aria-label={activeTab === 'developer' ? 'Switch to Red Team' : 'Switch to Developer'}
               className={`p-3.5 sm:p-4 rounded-2xl border transition-all duration-300 flex items-center justify-center cursor-pointer shadow-md ${
                 activeTab === 'developer'
                   ? isLight
@@ -192,9 +180,11 @@ export const SkillsSection: React.FC = () => {
           </div>
         </FadeIn>
 
+        )}
+
         {/* Tab Content with Smooth Transition */}
         <AnimatePresence mode="wait">
-          {activeTab === 'developer' && (
+          {SHOW_DEVELOPER_SKILLS && activeTab === 'developer' && (
             <motion.div
               key="developer"
               initial={{ opacity: 0, y: 15 }}
@@ -226,36 +216,6 @@ export const SkillsSection: React.FC = () => {
                 </div>
               </div>
 
-              {/* 1. Programming Languages */}
-              <div className="space-y-2.5">
-                <div className="flex items-center gap-2 text-[11px] font-mono font-bold uppercase tracking-wider text-slate-400">
-                  <Terminal className="w-3.5 h-3.5" />
-                  <span>Programming Languages</span>
-                </div>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2.5">
-                  {developer.languages.map((lang, idx) => (
-                    <div
-                      key={idx}
-                      className={`group p-3 sm:p-3.5 rounded-2xl border transition-all flex items-center justify-between ${
-                        isLight
-                          ? 'bg-white border-slate-200/80 shadow-xs hover:border-blue-400 hover:shadow-md'
-                          : 'bg-black/60 border-slate-800 hover:border-emerald-500/50 hover:shadow-[0_0_15px_rgba(0,255,102,0.15)]'
-                      }`}
-                    >
-                      <div className="flex items-center gap-2.5">
-                        {renderTechIcon(lang.name)}
-                        <span className={`font-mono font-bold text-xs sm:text-sm ${isLight ? 'text-slate-900' : 'text-slate-100'}`}>
-                          {lang.name}
-                        </span>
-                      </div>
-                      <span className={`px-2 py-0.5 rounded-full text-[11px] font-mono font-bold border ${getBadgeStyle(lang.level)}`}>
-                        {lang.level}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-              </div>
 
               {/* 2. Frameworks, Libraries & Databases */}
               <div className="space-y-2 pt-1">
@@ -277,13 +237,7 @@ export const SkillsSection: React.FC = () => {
                   <Wrench className="w-3.5 h-3.5" />
                   <span>Tools & Software</span>
                 </div>
-                <MarqueeTicker
-                  items={developer.toolsAndSoftware}
-                  renderIcon={renderTechIcon}
-                  isLight={isLight}
-                  reverse={true}
-                  speed={30}
-                />
+                <ToolList items={developer.toolsAndSoftware} renderIcon={renderTechIcon} isLight={isLight} />
               </div>
             </motion.div>
           )}
@@ -320,36 +274,6 @@ export const SkillsSection: React.FC = () => {
                 </div>
               </div>
 
-              {/* 1. Programming Languages */}
-              <div className="space-y-4">
-                <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-slate-400">
-                  <Terminal className="w-4 h-4" />
-                  <span>Programming Languages</span>
-                </div>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-3.5">
-                  {redHat.languages.map((lang, idx) => (
-                    <div
-                      key={idx}
-                      className={`group p-4 sm:p-5 rounded-3xl border-2 transition-all flex items-center justify-between ${
-                        isLight
-                          ? 'bg-white border-slate-200/80 shadow-xs hover:border-rose-400 hover:shadow-md'
-                          : 'bg-black/60 border-slate-800 hover:border-emerald-500/50 hover:shadow-[0_0_15px_rgba(0,255,102,0.15)]'
-                      }`}
-                    >
-                      <div className="flex items-center gap-3">
-                        {renderTechIcon(lang.name)}
-                        <span className={`font-mono font-bold text-base ${isLight ? 'text-slate-900' : 'text-slate-100'}`}>
-                          {lang.name}
-                        </span>
-                      </div>
-                      <span className={`px-3 py-1 rounded-full text-xs font-mono font-bold border ${getBadgeStyle(lang.level)}`}>
-                        {lang.level}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-              </div>
 
               {/* 2. Tools & Software */}
               <div className="space-y-3 pt-2">
@@ -357,12 +281,7 @@ export const SkillsSection: React.FC = () => {
                   <Wrench className="w-4 h-4" />
                   <span>Tools & Software</span>
                 </div>
-                <MarqueeTicker
-                  items={redHat.toolsAndSoftware}
-                  renderIcon={renderTechIcon}
-                  isLight={isLight}
-                  speed={78}
-                />
+                <ToolList items={redHat.toolsAndSoftware} renderIcon={renderTechIcon} isLight={isLight} />
               </div>
             </motion.div>
           )}
